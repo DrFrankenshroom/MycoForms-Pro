@@ -9889,7 +9889,7 @@ Remove(1);
     }
       }catch(Exception e)   {simplelogger(e);}
     
-     System.out.println(ycount);
+     
      
             xdata=Arrays.copyOf(x,xcount);
             ydata=Arrays.copyOf(y,ycount);
@@ -9898,19 +9898,22 @@ Remove(1);
          MW_testValue =  MW.mannWhitneyU(xdata, ydata);
           pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
           NaturalRanking MWranked = new NaturalRanking(NaNStrategy.MINIMAL,TiesStrategy.MAXIMUM);
-          double[] MWXranks = MWranked.rank(xdata);
-          double addranks=0;
+          double [] MWXranks = MWranked.rank(xdata);
+          double  addranks=0.0;
          
              
           
           SummaryStatistics MWz =  new  SummaryStatistics();
-          //for(int count=0;count<=xcount;++count)
-         // {addranks=+MWXranks[count];}
+          for(int count=0;count<xcount;++count)
+         {
+             addranks=addranks+MWXranks[count];
+         
+         }
           
           
           if(  xcount <=20  ||  ycount <=20  )
-           critical_value[13]=  (addranks-MWz.getMean()+.5) /MWz.getStandardDeviation();
-          else
+          critical_value[13]=  (addranks-MWz.getMean()+.5) /MWz.getStandardDeviation();
+        else
           critical_value[13]=    (xcount*ycount)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
           
           
