@@ -108,7 +108,8 @@ Boolean  KS=false,wilcoxan=false, chi_squared=false,U_Test=false,Ftest=false, j1
 double alpha,ttest,paired_Tstat,tStar;
  
 String  NullTestOption,ATO,NullOption, _var,ans;
-  int df=1,index;
+  int df=1,index,n0,n1;
+    int   xcount=0,ycount=0;
     /**
      * Creates new form MycologyFrame
      */
@@ -622,12 +623,12 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         var_alpha_lbl2 = new javax.swing.JLabel();
         var_alpha_lbl3 = new javax.swing.JLabel();
         var_alpha_lbl4 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        N_x = new javax.swing.JTextField();
+        N_y = new javax.swing.JTextField();
+        MW_alpha = new javax.swing.JTextField();
+        MW_test = new javax.swing.JTextField();
+        MW_CV = new javax.swing.JTextField();
+        MW_P = new javax.swing.JTextField();
         jLabel245 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
@@ -844,9 +845,9 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         setBackground(new java.awt.Color(163, 128, 128));
         setForeground(new java.awt.Color(207, 132, 57));
         setIconImages(null);
-        setPreferredSize(new java.awt.Dimension(1030, 1150));
+        setPreferredSize(new java.awt.Dimension(1010, 1150));
         setResizable(false);
-        setSize(new java.awt.Dimension(1150, 1050));
+        setSize(new java.awt.Dimension(1100, 1030));
 
         MycologyMultiplex.setBackground(new java.awt.Color(255, 85, 63));
         MycologyMultiplex.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -5149,17 +5150,17 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         var_alpha_lbl4.setToolTipText("Critical value calculated  via http://www.vassarstats.net/textbook/ch11a.html");
         var_alpha_lbl4.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jTextField5.setEditable(false);
+        N_x.setEditable(false);
 
-        jTextField6.setEditable(false);
+        N_y.setEditable(false);
 
-        jTextField7.setEditable(false);
+        MW_alpha.setEditable(false);
 
-        jTextField8.setEditable(false);
+        MW_test.setEditable(false);
 
-        jTextField9.setEditable(false);
+        MW_CV.setEditable(false);
 
-        jTextField10.setEditable(false);
+        MW_P.setEditable(false);
 
         jLabel245.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel245.setForeground(new java.awt.Color(2, 0, 0));
@@ -5217,11 +5218,11 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                                 .addComponent(jLabel210, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel33Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(N_x, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel33Layout.createSequentialGroup()
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(N_y, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel33Layout.createSequentialGroup()
                                 .addComponent(jLabel207, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5230,20 +5231,20 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                             .addComponent(var_alpha_lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel33Layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(MW_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel33Layout.createSequentialGroup()
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MW_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(MW_CV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel33Layout.createSequentialGroup()
                                 .addComponent(var_alpha_lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(var_alpha_lbl3)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MW_P, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(var_alpha_lbl4))))
                 .addGap(29, 29, 29))
             .addGroup(jPanel33Layout.createSequentialGroup()
@@ -5283,8 +5284,8 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                         .addComponent(jLabel210, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(N_x, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(N_y, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel33Layout.createSequentialGroup()
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel33Layout.createSequentialGroup()
@@ -5307,11 +5308,11 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                                 .addComponent(jLabel207, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MW_P, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(MW_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MW_CV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(MW_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel212, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -7091,7 +7092,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTestType, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jH0EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 82, Short.MAX_VALUE))
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jChiSquared)
@@ -7154,32 +7155,34 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel97)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 5, Short.MAX_VALUE))
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel97)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addComponent(jLabel95)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel96)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(jLabel97)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel97)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -7199,7 +7202,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 28, Short.MAX_VALUE))
+                        .addGap(0, 64, Short.MAX_VALUE))
                     .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -9788,8 +9791,7 @@ Remove(1);
           
     observed= Arrays.copyOf(g1,df-1);
     expected  =Arrays.copyOf(g2,df-1);
-         System.out.println(Arrays.toString(observed));
-         System.out.println(Arrays.toString(expected));
+        
          if(observed.length==expected.length)
          {
          pvalue[8]=TestUtils.gTest(expected, observed);
@@ -9869,7 +9871,7 @@ Remove(1);
                
                 double x[]=new double[1000];
                   double y[]=new double[1000];
-               int   xcount=0,ycount=0;
+             
                   double   xdata[]= new  double[1000];
                   double  ydata[]= new  double[1000];
                   double MW_testValue;      
@@ -9886,27 +9888,41 @@ Remove(1);
      }
     }
       }catch(Exception e)   {simplelogger(e);}
-  
+    
+     System.out.println(ycount);
+     
             xdata=Arrays.copyOf(x,xcount);
             ydata=Arrays.copyOf(y,ycount);
             MannWhitneyUTest MW=new  MannWhitneyUTest(NaNStrategy.MINIMAL,TiesStrategy.SEQUENTIAL);
           
          MW_testValue =  MW.mannWhitneyU(xdata, ydata);
-          pvalue[11]= MW.mannWhitneyUTest(xdata, ydata);
+          pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
           NaturalRanking MWranked = new NaturalRanking(NaNStrategy.MINIMAL,TiesStrategy.MAXIMUM);
           double[] MWXranks = MWranked.rank(xdata);
           double addranks=0;
-          
-        
-          
+         
+             
           
           SummaryStatistics MWz =  new  SummaryStatistics();
-          for(int count=1;count<=xcount;++count)
-          addranks=+MWXranks[count];
-          if( xcount <=20  ||  ycount <=20  )
+          //for(int count=0;count<=xcount;++count)
+         // {addranks=+MWXranks[count];}
+          
+          
+          if(  xcount <=20  ||  ycount <=20  )
            critical_value[13]=  (addranks-MWz.getMean()+.5) /MWz.getStandardDeviation();
           else
           critical_value[13]=    (xcount*ycount)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
+          
+          
+          
+         N_x.setText(Integer.toString(xcount));
+          N_y.setText(Integer.toString(ycount));
+         MW_alpha.setText(Double.toString(alpha));
+         MW_test.setText(Double.toString( MW_testValue ));
+         MW_CV.setText(Double.toString(critical_value[13]));
+         MW_P.setText(Double.toString(pvalue[13]));
+          
+          
           
     }     
     
@@ -11017,9 +11033,15 @@ for(int i=0;i<rows;i++)
     private javax.swing.JPanel KendalWTestPane;
     private javax.swing.JLabel Kendal_cv;
     private javax.swing.JLabel Kendal_descision;
+    private javax.swing.JTextField MW_CV;
+    private javax.swing.JTextField MW_P;
+    private javax.swing.JTextField MW_alpha;
+    private javax.swing.JTextField MW_test;
     private javax.swing.JPanel ManWhitneyPane;
     public javax.swing.JTabbedPane MycologyMultiplex;
     private javax.swing.JTextField NULLTextDisplay;
+    private javax.swing.JTextField N_x;
+    private javax.swing.JTextField N_y;
     private javax.swing.JTextField NullOpt;
     private javax.swing.JPanel OneSampleVariancePane;
     private javax.swing.JPanel Paired_tTestPanel;
@@ -11538,17 +11560,11 @@ for(int i=0;i<rows;i++)
     private javax.swing.JComboBox<String> jStalkCharSurfOrnCB;
     public javax.swing.JComboBox<String> jTestType;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton jTwoSampleVarianceRadioBut;
     private javax.swing.JRadioButton jUTestRadioBut;
     private javax.swing.JRadioButton jVarianceRadioBut;
