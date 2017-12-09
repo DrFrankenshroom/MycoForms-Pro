@@ -833,7 +833,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel98 = new javax.swing.JLabel();
         jChiSquared = new javax.swing.JRadioButton();
         jH0EdFeild = new javax.swing.JTextField();
-        jH1EditFeild = new javax.swing.JTextField();
+        jH1EdFeild = new javax.swing.JTextField();
         jALOSCB = new javax.swing.JComboBox<>();
         jTestType = new javax.swing.JComboBox<>();
         jTwoSampleVarianceRadioBut = new javax.swing.JRadioButton();
@@ -7029,9 +7029,9 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             }
         });
 
-        jH1EditFeild.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jH1EditFeild.setBorder(javax.swing.BorderFactory.createTitledBorder("Alternative  Hypothesis"));
-        jH1EditFeild.setOpaque(false);
+        jH1EdFeild.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jH1EdFeild.setBorder(javax.swing.BorderFactory.createTitledBorder("Alternative  Hypothesis"));
+        jH1EdFeild.setOpaque(false);
 
         jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.5", "0.2", "0.1", "0.05", "0.025", "0.01", "0.005" }));
         jALOSCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "alpha  level  of significance  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
@@ -7077,24 +7077,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(j1TailedRadioButton)
-                    .addComponent(jPaired_tTestRadioBut)
-                    .addComponent(jTwoSampleVarianceRadioBut)
-                    .addComponent(jtTestRadioBut)
-                    .addComponent(j2SampleTTestradiobut)
-                    .addComponent(jGtestRadioBut)
-                    .addComponent(jUTestRadioBut)
-                    .addComponent(jKSTest)
-                    .addComponent(jWilcoxanRadioBut)
-                    .addComponent(jH1EditFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addComponent(jALOSCB, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTestType, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jH0EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 82, Short.MAX_VALUE))
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jChiSquared)
                     .addComponent(jVarianceRadioBut)
                     .addGroup(jPanel22Layout.createSequentialGroup()
@@ -7105,6 +7087,24 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                         .addGap(90, 90, 90)
                         .addComponent(jPerfromTestBut)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(j1TailedRadioButton)
+                    .addComponent(jPaired_tTestRadioBut)
+                    .addComponent(jTwoSampleVarianceRadioBut)
+                    .addComponent(jtTestRadioBut)
+                    .addComponent(j2SampleTTestradiobut)
+                    .addComponent(jGtestRadioBut)
+                    .addComponent(jKSTest)
+                    .addComponent(jWilcoxanRadioBut)
+                    .addComponent(jH1EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addComponent(jALOSCB, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTestType, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jH0EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUTestRadioBut))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7117,9 +7117,9 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addComponent(j2SampleTTestradiobut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jGtestRadioBut)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jUTestRadioBut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jUTestRadioBut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jWilcoxanRadioBut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jKSTest)
@@ -7138,7 +7138,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jH0EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jH1EditFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jH1EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jALOSCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7153,34 +7153,34 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel19Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel97)
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel97))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel95)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel96)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel97)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7194,17 +7194,17 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             .addGroup(layout.createSequentialGroup()
                 .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 64, Short.MAX_VALUE))
-                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(555, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(588, 588, 588))
         );
 
         MycologyMultiplex.getAccessibleContext().setAccessibleName("Coral");
@@ -9484,7 +9484,7 @@ Remove(1);
               
                      H0=jH0EdFeild.getText();
                       
-                      H1=jH1EditFeild.getText();
+                      H1=jH1EdFeild.getText();
                      
                  NULLTextDisplay.setText(H0);
                H1Displayfeild.setText(H1);
@@ -9595,7 +9595,7 @@ Remove(1);
                        
                      H0=jH0EdFeild.getText();
                       tTestH0.setText(H0);
-                      H1=jH1EditFeild.getText();
+                      H1=jH1EdFeild.getText();
                      
                       tTestH1.setText(H1); 
                                  
@@ -9700,7 +9700,7 @@ Remove(1);
                        twoSampleCrit.setText(Double.toString(tStar));
                              H0=jH0EdFeild.getText();
               
-                      H1=jH1EditFeild.getText();
+                      H1=jH1EdFeild.getText();
                        
                        H02Test.setText(H0);
                        H12Test.setText(H1);
@@ -9812,7 +9812,7 @@ Remove(1);
               H0=jH0EdFeild.getText();
              GHypo.setText(H0);
                H0=jH0EdFeild.getText();
-                H1=jH1EditFeild.getText();
+                H1=jH1EdFeild.getText();
                GAlt.setText(H1);
                
              G_crit.setText(gcrit);
@@ -10089,7 +10089,7 @@ Remove(1);
                FDistribution  f_UB=   new FDistribution(s1.length-1,s2.length-1);
                 FDistribution  f_LB=   new FDistribution(s1.length-1,s2.length-1);
                 H0=jH0EdFeild.getText();
-                H1=jH1EditFeild.getText();
+                H1=jH1EdFeild.getText();
                F_H0.setText(H0);
                F_H1.setText(H1);
                String _ftest= String.format("%5.3f",Ftest);
@@ -10274,7 +10274,7 @@ Remove(1);
              }
                 
                 H0=jH0EdFeild.getText();
-                  H1=jH1EditFeild.getText();
+                  H1=jH1EdFeild.getText();
                 var_H0.setText(H0);
                 var_H1.setText(H1);
                          var_opt1.setText(NullTestOption);
@@ -10368,7 +10368,7 @@ Remove(1);
                   TDistribution t = new TDistribution(dof);
                   
        H0=jH0EdFeild.getText();
-       H1=jH1EditFeild.getText();
+       H1=jH1EdFeild.getText();
      pairedT_H0.setText(H0);
      pairedT_H1.setText(H1);     
      paired_Tstat= TestUtils.pairedT(sample1, sample2);
@@ -10507,6 +10507,10 @@ Remove(1);
           jWilcoxanRadioBut.setSelected(false);
           jKSTest.setSelected(false);
             jtTestRadioBut.setSelected(false);
+            jH0EdFeild.setEditable(false);
+            jH1EdFeild.setEditable(false);
+            
+            
     }//GEN-LAST:event_jUTestRadioButActionPerformed
     }
     
@@ -10797,7 +10801,7 @@ Remove(1);
 
     private void jClearResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearResultsActionPerformed
         jH0EdFeild.setText("    ");
-        jH1EditFeild.setText( "   ");
+        jH1EdFeild.setText( "   ");
         col1.setText("   ");
         Insert(4,5);
       Initialize_Table();
@@ -11287,7 +11291,7 @@ for(int i=0;i<rows;i++)
     private javax.swing.JComboBox<String> jGreenCB;
     private javax.swing.JRadioButton jGtestRadioBut;
     private javax.swing.JTextField jH0EdFeild;
-    private javax.swing.JTextField jH1EditFeild;
+    private javax.swing.JTextField jH1EdFeild;
     private javax.swing.JRadioButton jKSTest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -46,21 +46,20 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="MycologyMultiplex" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel19" max="32767" attributes="0"/>
+              <Component id="jPanel19" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="MycologyMultiplex" min="-2" pref="945" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="jPanel19" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="MycologyMultiplex" min="-2" pref="945" max="-2" attributes="0"/>
+              <EmptySpace pref="555" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Component id="jPanel19" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="588" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -10488,41 +10487,41 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel96" min="-2" pref="108" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel97" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="jLabel95" min="-2" pref="140" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="jPanel20" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jPanel21" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel95" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jPanel22" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel97" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <Component id="jPanel22" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Component id="jLabel95" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel20" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel96" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel97" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
@@ -10730,27 +10729,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="j1TailedRadioButton" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPaired_tTestRadioBut" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTwoSampleVarianceRadioBut" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtTestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="j2SampleTTestradiobut" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jGtestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jUTestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jKSTest" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jWilcoxanRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jH1EditFeild" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jALOSCB" min="-2" pref="166" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTestType" min="-2" pref="98" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jH0EdFeild" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jChiSquared" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jVarianceRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -10765,6 +10743,27 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="j1TailedRadioButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPaired_tTestRadioBut" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTwoSampleVarianceRadioBut" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtTestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="j2SampleTTestradiobut" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jGtestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jKSTest" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jWilcoxanRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jH1EdFeild" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jALOSCB" min="-2" pref="166" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jTestType" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jH0EdFeild" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
+                          <Component id="jUTestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -10778,9 +10777,9 @@
                       <Component id="j2SampleTTestradiobut" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jGtestRadioBut" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jUTestRadioBut" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jUTestRadioBut" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jWilcoxanRadioBut" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jKSTest" min="-2" max="-2" attributes="0"/>
@@ -10799,7 +10798,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jH0EdFeild" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jH1EditFeild" min="-2" max="-2" attributes="0"/>
+                      <Component id="jH1EdFeild" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jALOSCB" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -10923,7 +10922,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jH0EdFeildActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jH1EditFeild">
+            <Component class="javax.swing.JTextField" name="jH1EdFeild">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="0"/>
