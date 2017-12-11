@@ -55,7 +55,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="MycologyMultiplex" min="-2" pref="945" max="-2" attributes="0"/>
-              <EmptySpace pref="555" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Component id="jPanel19" max="32767" attributes="0"/>
@@ -10941,7 +10941,7 @@
                   <StringArray count="7">
                     <StringItem index="0" value="0.5"/>
                     <StringItem index="1" value="0.2"/>
-                    <StringItem index="2" value="0.1"/>
+                    <StringItem index="2" value="0.10"/>
                     <StringItem index="3" value="0.05"/>
                     <StringItem index="4" value="0.025"/>
                     <StringItem index="5" value="0.01"/>

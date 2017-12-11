@@ -105,7 +105,7 @@ String   Volva;
 
 Boolean  KS=false,wilcoxan=false, chi_squared=false,U_Test=false,Ftest=false, j1Tailed=false;
  Boolean  t_Test=false,TwoSampleT=false,Gtest=false,j2tailed=false, paired_t=false,one_sample=false;
-double alpha,ttest,paired_Tstat,tStar;
+double alpha,ttest,paired_Tstat,tStar,zUTest;
  
 String  NullTestOption,ATO,NullOption, _var,ans;
   int df=1,index,n0,n1;
@@ -7033,7 +7033,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jH1EdFeild.setBorder(javax.swing.BorderFactory.createTitledBorder("Alternative  Hypothesis"));
         jH1EdFeild.setOpaque(false);
 
-        jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.5", "0.2", "0.1", "0.05", "0.025", "0.01", "0.005" }));
+        jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.5", "0.2", "0.10", "0.05", "0.025", "0.01", "0.005" }));
         jALOSCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "alpha  level  of significance  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jALOSCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -7201,7 +7201,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(588, 588, 588))
@@ -9872,9 +9872,65 @@ Remove(1);
                 double x[]=new double[1000];
                   double y[]=new double[1000];
              
-                  double   xdata[]= new  double[1000];
-                  double  ydata[]= new  double[1000];
-                  double MW_testValue;      
+                  double   xdata[]=  new  double[1000];
+                  double  ydata[]=  new  double[1000];
+              
+                  double U;   
+                  
+    
+           
+            int MWQuantiles_a[] []={
+           {3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5}, 
+          {6,6,6,6,6,6,7,7,8,8,8,9,9,910,10,11,11,11,12},
+          {10,10,10,11,12,12,13,14,14,15,16,16,17,18,19,20,20,21},
+          { 15,15,16,17,18,19, 20,21,22,23,24,25,26,27,28,29,30,31,32  },
+          {21,21,23,24,25,26,28,29,30,31,33,34,35,37,38,40,41,42,44},
+           {28,29,30,32,33,35,36,38,39,41,42,44,45,47,48,50,51,53},
+           {28,29,30,32,33,35,36,38,39,41,42,44,45,47,48,50,51,53},
+           {36,37,39,41,43,44,46,48,50,51,54,56,59,61,63,65,67,69,71},
+            {45,47,49,51,52,55,57,59,62,64,66,68,70,73,75,77,79,82},
+            {55,57,59,62,64,6769,72,75,78,80,82,85,87,90,93,95,98} ,   
+            {66,68,69,72,74,77,80,83,85,88,91,94,97,100,103,106,109,112,115},
+            {78,81,84,87,90,93,96,100,103,106,110,113,116,120,123,126,130,133},
+            {92,94,97,101,104,108,112,115,119,123,127,131,135,139,143,147,151,155,159},
+             {106,108,112,116,119,123,128,132,136,140,144,149,153,157,162,166,171,174,179},
+             {121,124,128,132,136,140,145,149,154,158,163,168,172,176,181,185,190,194},
+             {137,140,144,149,153,158,163,168,174,179,184,190,196,201,207,212,218,223,229,235},
+             {154,158,162,167,172,177,182,187,192,198,203,209,214,220,225,231,236,242,247},
+              {172,176,181,186,191,196,202,208,213,219,225,230,236,242,247,253,259,264},
+              {192,195,200,206,211,217,223,229,235,241,247,254,260,266,273,279,285292,298},    
+              {212,216,221,227,233,239,245,251,258,264,271,278,284,291,298,304,311,318,325}
+            };
+           
+           
+          
+         
+            
+             
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      
+                    
+                    
+                    
+                             
             try{
        for(int i=0;  i<=10;++i)
     {if (StatsTable.getValueAt(i,0) != null)
@@ -9888,40 +9944,37 @@ Remove(1);
      }
     }
       }catch(Exception e)   {simplelogger(e);}
-    
-     
+   
+  
+              
      
             xdata=Arrays.copyOf(x,xcount);
             ydata=Arrays.copyOf(y,ycount);
             MannWhitneyUTest MW=new  MannWhitneyUTest(NaNStrategy.MINIMAL,TiesStrategy.SEQUENTIAL);
           
-         MW_testValue =  MW.mannWhitneyU(xdata, ydata);
+         U=  MW.mannWhitneyU(xdata, ydata);
           pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
-          NaturalRanking MWranked = new NaturalRanking(NaNStrategy.MINIMAL,TiesStrategy.MAXIMUM);
-          double [] MWXranks = MWranked.rank(xdata);
-          double  addranks=0.0;
+        if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
+            critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
+           
+           if(alpha==0.10 &&  (xcount< 20  ||  ycount<20)    )
+            critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
+           
+          
+          if(  xcount < 20  ||  ycount <20  )
+            U  =  MW.mannWhitneyU(xdata, ydata);
+           else       
+          zUTest  = U-(xcount*ycount/2)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
+        
+           
          
-             
-          
-          SummaryStatistics MWz =  new  SummaryStatistics();
-          for(int count=0;count<xcount;++count)
-         {
-             addranks=addranks+MWXranks[count];
-         
-         }
-          
-          
-          if(  xcount <=20  ||  ycount <=20  )
-          critical_value[13]=  (addranks-MWz.getMean()+.5) /MWz.getStandardDeviation();
-        else
-          critical_value[13]=    (xcount*ycount)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
           
           
           
          N_x.setText(Integer.toString(xcount));
           N_y.setText(Integer.toString(ycount));
          MW_alpha.setText(Double.toString(alpha));
-         MW_test.setText(Double.toString( MW_testValue ));
+         MW_test.setText(Double.toString(zUTest ));
          MW_CV.setText(Double.toString(critical_value[13]));
          MW_P.setText(Double.toString(pvalue[13]));
           
