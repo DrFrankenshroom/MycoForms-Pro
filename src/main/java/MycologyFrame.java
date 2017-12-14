@@ -10074,7 +10074,7 @@ Remove(1);
          MW_P.setText(p);
          
              
-             String sol3= String.format("Since G=%5.3f. We  reject H0",critical_value[13]);
+           
                  String alt1= String.format("Since G>%5.3f. We  accept H0",critical_value[13]);
              String alt2= String.format("Since G<%5.3f. We  accep H0",critical_value[13]);
           
