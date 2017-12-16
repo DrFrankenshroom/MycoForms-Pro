@@ -631,10 +631,10 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         MW_P = new javax.swing.JTextField();
         jLabel245 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jLabel246 = new javax.swing.JLabel();
         MW_TestResult = new javax.swing.JLabel();
+        MWCrit = new javax.swing.JLabel();
         KendalWTestPane = new javax.swing.JPanel();
         jLabel237 = new javax.swing.JLabel();
         w_label = new javax.swing.JLabel();
@@ -5166,14 +5166,12 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
 
         jLabel245.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel245.setForeground(new java.awt.Color(2, 0, 0));
-        jLabel245.setText("<html> Reject  H<sub>0</sub>  if  </html>");
+        jLabel245.setText("<html> Reject  H<sub>0</sub>  if  T</html>");
 
         jLabel212.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel212.setForeground(new java.awt.Color(35, 5, 5));
         jLabel212.setText("Descision Criteria");
         jLabel212.setBorder(new javax.swing.border.MatteBorder(null));
-
-        jTextField11.setText("jTextField11");
 
         jTextField12.setText("jTextField12");
 
@@ -5183,6 +5181,8 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel246.setBorder(new javax.swing.border.MatteBorder(null));
 
         MW_TestResult.setText("jLabel109");
+
+        MWCrit.setText("jLabel109");
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -5216,22 +5216,25 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addGap(29, 29, 29))
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel33Layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel33Layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(jLabel212, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel33Layout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(jLabel246, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel33Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(MW_TestResult, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(MW_TestResult, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel33Layout.createSequentialGroup()
+                        .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel33Layout.createSequentialGroup()
+                                .addGap(246, 246, 246)
+                                .addComponent(jLabel212, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel33Layout.createSequentialGroup()
+                                .addGap(252, 252, 252)
+                                .addComponent(jLabel246, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel33Layout.createSequentialGroup()
+                                .addGap(223, 223, 223)
+                                .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(MWCrit, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(39, 39, 39)
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5317,13 +5320,13 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MWCrit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel246, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MW_TestResult, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout ManWhitneyPaneLayout = new javax.swing.GroupLayout(ManWhitneyPane);
@@ -9874,7 +9877,7 @@ Remove(1);
                   double   xdata[]=  new  double[1000];
                   double  ydata[]=  new  double[1000];
               
-                  double U;   
+                  double T;   
                   
     
            
@@ -9989,18 +9992,11 @@ Remove(1);
             ydata=Arrays.copyOf(y,ycount);
             MannWhitneyUTest MW=new  MannWhitneyUTest(NaNStrategy.MINIMAL,TiesStrategy.SEQUENTIAL);
           
-         U=  MW.mannWhitneyU(xdata, ydata);
+         T=  MW.mannWhitneyU(xdata, ydata);
           pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
           
-           String  sol1 = String.format("Since %5.3f<=%5.3f. We  reject H0",U,critical_value[13]); 
-             String sol2 = String.format("Since %5.3f >= %5.3f. We  reject H0",U,critical_value[13]);
-             String sol3 = String.format("Since %5.3f = %5.3f. We  reject H0",U,critical_value[13]);
-             String  sol1a = String.format("Since %5.3f>%5.3f. We  accept H0",U,critical_value[13]); 
-             String sol2a = String.format("Since %5.3f < %5.3f. We  accept H0",U,critical_value[13]);
-             String sol3a = String.format("Since %5.3f != %5.3f. We  accept H0",U,critical_value[13]);
-          
-          
-          
+           
+           
         if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
            
@@ -10016,50 +10012,60 @@ Remove(1);
               
           if(  xcount < 20  ||  ycount <20  )
           {
-            U  =  MW.mannWhitneyU(xdata, ydata);
-          MW_test.setText(Double.toString(U));
-         
-            
-             if( U == critical_value[13])
-            sol2 = String.format("Since %5.3f=%5.3f. We  reject H0",U,critical_value[13]);
+            T  =  MW.mannWhitneyU(xdata, ydata);
+          MW_test.setText(Double.toString(T));
           }
+          
+          String  sol1 = String.format("Since %5.3f<=%5.3f. We  reject H0",T,critical_value[13]); 
+             String sol2 = String.format("Since %5.3f >= %5.3f. We  reject H0",T,critical_value[13]);
+             String sol3 = String.format("Since %5.3f = %5.3f. We  reject H0",T,critical_value[13]);
+             String  sol1a = String.format("Since %5.3f>%5.3f. We  accept H0",T,critical_value[13]); 
+             String sol2a = String.format("Since %5.3f < %5.3f. We  accept H0",T,critical_value[13]);
+             String sol3a = String.format("Since %5.3f != %5.3f. We  accept H0",T,critical_value[13]);
+          
+            
+             if( T == critical_value[13])
+            sol2 = String.format("Since %5.3f=%5.3f. We  reject H0",T,critical_value[13]);
+          
            
           
-          if(  ( U<=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
+          if(  ( T<=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
             MW_TestResult.setText(sol1);
           
         
-           if(  ( U>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
+           if(  ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
           MW_TestResult.setText(sol2);
            
-            if(  ( U>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
+            if(  ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
           MW_TestResult.setText(sol3);
           
           
           
           
-          if  ( xcount < 20  ||  ycount <20  )  
+          if  ( xcount > 20  ||  ycount >20  )  
           {   
-          zUTest  = U-(xcount*ycount/2)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
+          zUTest  = T-(xcount*ycount/2)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
             MW_test.setText(Double.toString(zUTest));
           }
           
               
          if( jTestType.getSelectedIndex() ==0)
          {
+             MWCrit.setText("less  than ");
               medianH0.setText("<=");
               medianH1.setText(">");
           }
            
          if(  jTestType.getSelectedIndex() ==1 )
          {    
+          MWCrit.setText("greater than ");
          medianH0.setText(">=");
          medianH1.setText("<");
          }
          
            if( jTestType.getSelectedIndex()==2 )
           {
-      
+         MWCrit.setText("less than  or greater than ");
               medianH0.setText("=");
                medianH1.setText("!=");
            }
@@ -10068,7 +10074,6 @@ Remove(1);
          N_x.setText(Integer.toString(xcount));
           N_y.setText(Integer.toString(ycount));
          MW_alpha.setText(Double.toString(alpha));
-         MW_test.setText(Double.toString(zUTest ));
          MW_CV.setText(Double.toString(critical_value[13]));
         String  p=String.format("%1.4f",pvalue[13]);
          MW_P.setText(p);
@@ -11192,6 +11197,7 @@ for(int i=0;i<rows;i++)
     private javax.swing.JPanel KendalWTestPane;
     private javax.swing.JLabel Kendal_cv;
     private javax.swing.JLabel Kendal_descision;
+    private javax.swing.JLabel MWCrit;
     private javax.swing.JTextField MW_CV;
     private javax.swing.JTextField MW_P;
     private javax.swing.JLabel MW_TestResult;
@@ -11719,7 +11725,6 @@ for(int i=0;i<rows;i++)
     private javax.swing.JComboBox<String> jStalkCharSurfOrnCB;
     public javax.swing.JComboBox<String> jTestType;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JRadioButton jTwoSampleVarianceRadioBut;
