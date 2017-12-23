@@ -25,7 +25,6 @@ import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
 
-
  
 import org.apache.commons.math3.stat.inference.TestUtils;
 
@@ -631,7 +630,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         MW_P = new javax.swing.JTextField();
         jLabel245 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
         jLabel246 = new javax.swing.JLabel();
         MW_TestResult = new javax.swing.JLabel();
         MWCrit = new javax.swing.JLabel();
@@ -4485,8 +4483,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel113.setText("Enter  title  for column   # 2");
         jLabel113.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        Treatment.setText("jTextField1");
-
         jLabel114.setForeground(new java.awt.Color(19, 3, 3));
         jLabel114.setText("Enter  title  for treatment");
         jLabel114.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
@@ -5173,8 +5169,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel212.setText("Descision Criteria");
         jLabel212.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jTextField12.setText("jTextField12");
-
         jLabel246.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel246.setForeground(new java.awt.Color(35, 5, 5));
         jLabel246.setText("         Result");
@@ -5232,8 +5226,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                                 .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(MWCrit, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(39, 39, 39)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel33Layout.createSequentialGroup()
@@ -5320,7 +5312,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MWCrit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel246, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7035,7 +7026,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jH1EdFeild.setBorder(javax.swing.BorderFactory.createTitledBorder("Alternative  Hypothesis"));
         jH1EdFeild.setOpaque(false);
 
-        jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.5", "0.2", "0.10", "0.05", "0.025", "0.01", "0.005" }));
+        jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.005", "0.01", "0.10", "0.05", "0.025", "0.2", "0.5" }));
         jALOSCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "alpha  level  of significance  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jALOSCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -7155,21 +7146,24 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel19Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel97))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel19Layout.createSequentialGroup()
-                .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                            .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 139, Short.MAX_VALUE))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jLabel97)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7296,7 +7290,7 @@ public  void setColumns()
   {
   Remove(5);
 Remove(4);
-Remove(4);
+Remove(3);
   }
  if(t_Test==true   || one_sample==true ||wilcoxan)
  {
@@ -9877,7 +9871,7 @@ Remove(1);
                   double   xdata[]=  new  double[1000];
                   double  ydata[]=  new  double[1000];
               
-                  double T;   
+                  double T,W=0;   
                   
     
            
@@ -9995,20 +9989,29 @@ Remove(1);
          T=  MW.mannWhitneyU(xdata, ydata);
           pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
           
-           
-           
+          
+                     
         if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
            
-           if(alpha==0.10 &&  (xcount< 20  ||  ycount<20)    )
+           if((alpha==0.10  &&  (xcount< 20  ||  ycount<20))    )
             critical_value[13]=MWQuantiles_b[xcount-2] [ycount-2];
            
-              if(alpha==0.05  &&  (xcount< 20  ||  ycount<20)    )
+              if( alpha==0.05  &&  (xcount< 20  ||  ycount<20)  )
             critical_value[13]=MWQuantiles_c[xcount-2] [ycount-2];
               
               
               if(alpha==0.025  &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_d[xcount-2] [ycount-2];
+              
+             if(j2tailed==true)
+           {
+               if (T<critical_value[13])
+                  W=xcount*ycount-critical_value[13]; 
+           }  
+            
+              
+              
               
           if(  xcount < 20  ||  ycount <20  )
           {
@@ -10017,26 +10020,28 @@ Remove(1);
           }
           
           String  sol1 = String.format("Since %5.3f<=%5.3f. We  reject H0",T,critical_value[13]); 
-             String sol2 = String.format("Since %5.3f >= %5.3f. We  reject H0",T,critical_value[13]);
+             String sol2 = String.format("Since %5.3f >= %5.3f. We  reject H0",T,W);
              String sol3 = String.format("Since %5.3f = %5.3f. We  reject H0",T,critical_value[13]);
              String  sol1a = String.format("Since %5.3f>%5.3f. We  accept H0",T,critical_value[13]); 
              String sol2a = String.format("Since %5.3f < %5.3f. We  accept H0",T,critical_value[13]);
-             String sol3a = String.format("Since %5.3f != %5.3f. We  accept H0",T,critical_value[13]);
-          
-            
-             if( T == critical_value[13])
+             String sol3a = String.format("Since %5.3f != %5.3f. We  accept H0",T,W);
+            String Critless=String.format("less than  %5.3f",T);
+              String CritGreater=String.format("greater than  %5.3f",T);
+                String CritEq=String.format("lLess than or  greater  than %5.3f",T);
+              
+             if( (T == critical_value[13])&&(jALOSCB.getSelectedIndex()<4))
             sol2 = String.format("Since %5.3f=%5.3f. We  reject H0",T,critical_value[13]);
           
            
           
-          if(  ( T<=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
+          if(  ( T<=critical_value[13])  &&  (xcount < 20  ||  ycount <20  )&&(jALOSCB.getSelectedIndex()<4) )
             MW_TestResult.setText(sol1);
           
         
-           if(  ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
+           if( ( ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  )) &&(jALOSCB.getSelectedIndex()<4))
           MW_TestResult.setText(sol2);
            
-            if(  ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ))
+            if(  ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20 )  &&(jALOSCB.getSelectedIndex()<4))
           MW_TestResult.setText(sol3);
           
           
@@ -10051,23 +10056,27 @@ Remove(1);
               
          if( jTestType.getSelectedIndex() ==0)
          {
-             MWCrit.setText("less  than ");
+             MWCrit.setText(Critless);
               medianH0.setText("<=");
               medianH1.setText(">");
+              
+              
           }
            
          if(  jTestType.getSelectedIndex() ==1 )
          {    
-          MWCrit.setText("greater than ");
+          MWCrit.setText(CritGreater);
          medianH0.setText(">=");
          medianH1.setText("<");
+         W=xcount*ycount-critical_value[13] ;
          }
          
            if( jTestType.getSelectedIndex()==2 )
           {
-         MWCrit.setText("less than  or greater than ");
+         MWCrit.setText(CritEq);
               medianH0.setText("=");
                medianH1.setText("!=");
+               
            }
           
           
@@ -10710,22 +10719,24 @@ Remove(1);
     }//GEN-LAST:event_jtTestRadioButActionPerformed
 
     private void jALOSCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jALOSCBActionPerformed
-      
+       
         Object jALOSCBObj= jALOSCB.getSelectedItem();
        alpha= Double.parseDouble(jALOSCBObj.toString());
-       
-       alphadisplay =jALOSCBObj.toString();
-       
+        if(jALOSCB.getSelectedIndex()>4 )
+        {System.out.println("not allowed");}
+      
+      
+           
     }//GEN-LAST:event_jALOSCBActionPerformed
 
     private void j2TailedRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j2TailedRadioButtonActionPerformed
-         if(j1TailedRadioButton.isSelected())
-         {
-             j1TailedRadioButton.setSelected(true);
+         
+             j2TailedRadioButton.setSelected(true);
              alpha=alpha/2;
-            j2tailed=false;
-            j1Tailed=true;        ;
-         }
+ 
+            j1Tailed=false;
+           
+       
     }//GEN-LAST:event_j2TailedRadioButtonActionPerformed
    
     private void jTestTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTestTypeActionPerformed
@@ -10811,7 +10822,7 @@ Remove(1);
                 pw.printf(ftest,H0,H1,df1,df2,alpha,Ftest,critical_value[7],pvalue[7]);
                 pw.close();
             }catch(IOException  ioe){
-                System.out.println("Error  occured:");
+               
                 ioe.printStackTrace();
             }
 
@@ -10839,7 +10850,7 @@ Remove(1);
                 pw.printf(vartest,H0,H1,n,alpha,_var,critical_value[4],pvalue[4]);
                 pw.close();
             }catch(IOException  ioe){
-                System.out.println("Error  occured:");
+             
                 ioe.printStackTrace();
             }
         }
@@ -10894,7 +10905,7 @@ Remove(1);
                 pw.printf(t2_test,H0,H1,dof,alpha,  tStar ,critical_value[2],pvalue[2]);
                 pw.close();
             }catch(IOException  ioe){
-                System.out.println("Error  occured:");
+                
                 ioe.printStackTrace();
             }  }
 
@@ -10947,7 +10958,7 @@ Remove(1);
                         pw.printf(chitest,H0,H1,df,alpha,chisquareVal,critical_value[0],pvalue[0]);
                         pw.close();
                     }catch(IOException  ioe){
-                        System.out.println("Error  occured:");
+                    
                         ioe.printStackTrace();
                     }
 
@@ -11053,16 +11064,21 @@ Remove(1);
         String  header,header2,header0,h3,h4,h5;
         int  cols;
   int rows=StatsTable.getRowCount();
+       
         col3.setEditable(false);
         col4.setEditable(false);
         col5.setEditable(false);
+        
+        if(chi_squared !=true)
+       Treatment.setEditable(false);
+       
 for(int i=0;i<rows;i++)
   {
     StatsTable.setValueAt(i+1,i,0);
    
    }
 
-       Treatment.setEditable(false);
+       
 
         StatsTable.setShowGrid(true);
       
@@ -11074,18 +11090,19 @@ for(int i=0;i<rows;i++)
         
 
         StatsTable.setGridColor(java.awt.Color.black);
-
+        
         if( Ftest==true  || TwoSampleT==true||paired_t==true|| U_Test==true)
         {
+          
             header=col1.getText();
             header2=col2.getText();
-            StatsTable.getColumnModel().getColumn(2).setHeaderValue(header);
-            StatsTable.getColumnModel().getColumn(3).setHeaderValue(header2);
+            StatsTable.getColumnModel().getColumn(3).setHeaderValue(header);
+            StatsTable.getColumnModel().getColumn(6).setHeaderValue(header2);
         }
 
-        if(chi_squared==true   ||  Gtest==true)
+        if(chi_squared==true   ||  Gtest==true) 
         {
-            Treatment.setEditable(true);
+           
             header0=Treatment.getText();
             header=col1.getText();
             header2=col2.getText();
@@ -11096,7 +11113,6 @@ for(int i=0;i<rows;i++)
 
         if(t_Test==true ||  one_sample==true)
         {
-            Treatment.setEditable(false);
             col2.setEditable(false);
             header=col1.getText();
             StatsTable.getColumnModel().getColumn(2).setHeaderValue(header);
@@ -11725,7 +11741,6 @@ for(int i=0;i<rows;i++)
     private javax.swing.JComboBox<String> jStalkCharSurfOrnCB;
     public javax.swing.JComboBox<String> jTestType;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JRadioButton jTwoSampleVarianceRadioBut;
     private javax.swing.JRadioButton jUTestRadioBut;
