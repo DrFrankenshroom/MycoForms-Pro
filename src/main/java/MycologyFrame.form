@@ -10745,7 +10745,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="j1TailedRadioButton" min="-2" max="-2" attributes="0"/>
                           <Component id="jPaired_tTestRadioBut" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTwoSampleVarianceRadioBut" min="-2" max="-2" attributes="0"/>
+                          <Component id="jFTestRadioBut" min="-2" max="-2" attributes="0"/>
                           <Component id="jtTestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="j2SampleTTestradiobut" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jGtestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -10760,7 +10760,7 @@
                           <Component id="jH0EdFeild" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                           <Component id="jUTestRadioBut" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -10782,7 +10782,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jKSTest" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTwoSampleVarianceRadioBut" min="-2" max="-2" attributes="0"/>
+                      <Component id="jFTestRadioBut" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPaired_tTestRadioBut" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -10954,9 +10954,6 @@
                   </Border>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jALOSCBActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -10977,20 +10974,17 @@
                   </Border>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTestTypeActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jTwoSampleVarianceRadioBut">
+            <Component class="javax.swing.JRadioButton" name="jFTestRadioBut">
               <Properties>
                 <Property name="text" type="java.lang.String" value="F  Test-2  Sample  Test"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTwoSampleVarianceRadioButActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFTestRadioButActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jPaired_tTestRadioBut">

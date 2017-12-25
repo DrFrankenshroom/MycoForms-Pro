@@ -834,7 +834,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jH1EdFeild = new javax.swing.JTextField();
         jALOSCB = new javax.swing.JComboBox<>();
         jTestType = new javax.swing.JComboBox<>();
-        jTwoSampleVarianceRadioBut = new javax.swing.JRadioButton();
+        jFTestRadioBut = new javax.swing.JRadioButton();
         jPaired_tTestRadioBut = new javax.swing.JRadioButton();
         jVarianceRadioBut = new javax.swing.JRadioButton();
 
@@ -7028,25 +7028,15 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
 
         jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.005", "0.01", "0.10", "0.05", "0.025", "0.2", "0.5" }));
         jALOSCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "alpha  level  of significance  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
-        jALOSCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jALOSCBActionPerformed(evt);
-            }
-        });
 
         jTestType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<=", ">=", "=" }));
         jTestType.setSelectedIndex(1);
         jTestType.setBorder(javax.swing.BorderFactory.createTitledBorder("Test option"));
-        jTestType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTestTypeActionPerformed(evt);
-            }
-        });
 
-        jTwoSampleVarianceRadioBut.setText("F  Test-2  Sample  Test");
-        jTwoSampleVarianceRadioBut.addActionListener(new java.awt.event.ActionListener() {
+        jFTestRadioBut.setText("F  Test-2  Sample  Test");
+        jFTestRadioBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTwoSampleVarianceRadioButActionPerformed(evt);
+                jFTestRadioButActionPerformed(evt);
             }
         });
 
@@ -7084,7 +7074,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(j1TailedRadioButton)
                     .addComponent(jPaired_tTestRadioBut)
-                    .addComponent(jTwoSampleVarianceRadioBut)
+                    .addComponent(jFTestRadioBut)
                     .addComponent(jtTestRadioBut)
                     .addComponent(j2SampleTTestradiobut)
                     .addComponent(jGtestRadioBut)
@@ -7097,7 +7087,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                         .addComponent(jTestType, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jH0EdFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jUTestRadioBut))
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7117,7 +7107,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jKSTest)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTwoSampleVarianceRadioBut)
+                .addComponent(jFTestRadioBut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPaired_tTestRadioBut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -7292,42 +7282,31 @@ public  void setColumns()
 Remove(4);
 Remove(3);
   }
+  
  if(t_Test==true   || one_sample==true ||wilcoxan)
  {
- 
-Remove(2);
-Remove(2);
-Remove(1);
- 
+ Remove(6);
+ for(int count=0;count<=1;++count)
+ { Remove(2);
+   Remove(1);
+ }
+
  }
  
  if(TwoSampleT==true    ||  Ftest==true   || paired_t==true|| U_Test==true)
  {
   
+
+  Remove(6);
+ Remove(3);
+  Remove(1);
+  Remove(2);
  
-  
-  Remove(1);
-  Remove(1);
-  Remove(2);
-  Remove(2);
-  
-
-    
  }
- }
-
-   protected  void clear_table()
-   {
-       
-  
-       
-        
-          
-          
-      
+     
        
            
-   }     
+   }    
            
          
     
@@ -9990,7 +9969,13 @@ Remove(1);
           pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
           
           
-                     
+            if( jTestType.getSelectedIndex() ==0)
+                alpha=1-alpha;
+            
+              if( j2tailed==true)
+                alpha=alpha/2;
+          
+         
         if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
            
@@ -10004,20 +9989,15 @@ Remove(1);
               if(alpha==0.025  &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_d[xcount-2] [ycount-2];
               
-             if(j2tailed==true)
-           {
-               if (T<critical_value[13])
-                  W=xcount*ycount-critical_value[13]; 
-           }  
-            
               
               
+             
+           
+      
               
           if(  xcount < 20  ||  ycount <20  )
-          {
-            T  =  MW.mannWhitneyU(xdata, ydata);
           MW_test.setText(Double.toString(T));
-          }
+          
           
           String  sol1 = String.format("Since %5.3f<=%5.3f. We  reject H0",T,critical_value[13]); 
              String sol2 = String.format("Since %5.3f >= %5.3f. We  reject H0",T,W);
@@ -10027,27 +10007,26 @@ Remove(1);
              String sol3a = String.format("Since %5.3f != %5.3f. We  accept H0",T,W);
             String Critless=String.format("less than  %5.3f",T);
               String CritGreater=String.format("greater than  %5.3f",T);
-                String CritEq=String.format("lLess than or  greater  than %5.3f",T);
+                String CritEq=String.format("Less than or  greater  than %5.3f",T);
               
-             if( (T == critical_value[13])&&(jALOSCB.getSelectedIndex()<4))
-            sol2 = String.format("Since %5.3f=%5.3f. We  reject H0",T,critical_value[13]);
           
+        
            
           
-          if(  ( T<=critical_value[13])  &&  (xcount < 20  ||  ycount <20  )&&(jALOSCB.getSelectedIndex()<4) )
+          if(  ( T<=critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
             MW_TestResult.setText(sol1);
           
         
-           if( ( ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  )) &&(jALOSCB.getSelectedIndex()<4))
+           if( ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ) )
           MW_TestResult.setText(sol2);
            
-            if(  ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20 )  &&(jALOSCB.getSelectedIndex()<4))
+            if(  ( (T>critical_value[13]) ||   ( T<critical_value[13]))  &&    (xcount < 20  ||  ycount <20 ) )
           MW_TestResult.setText(sol3);
           
           
           
           
-          if  ( xcount > 20  ||  ycount >20  )  
+          if  ( xcount > 20  ||  ycount > 20  )  
           {   
           zUTest  = T-(xcount*ycount/2)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
             MW_test.setText(Double.toString(zUTest));
@@ -10059,16 +10038,20 @@ Remove(1);
              MWCrit.setText(Critless);
               medianH0.setText("<=");
               medianH1.setText(">");
-              
+              MW_CV.setText(Double.toString(critical_value[13]));
+                 MW_alpha.setText(Double.toString(alpha));
               
           }
            
          if(  jTestType.getSelectedIndex() ==1 )
-         {    
+         {     
           MWCrit.setText(CritGreater);
          medianH0.setText(">=");
          medianH1.setText("<");
-         W=xcount*ycount-critical_value[13] ;
+         W= xcount*ycount-critical_value[13];
+         alpha=1-alpha;
+          MW_CV.setText(Double.toString(W));
+             MW_alpha.setText(Double.toString(alpha));
          }
          
            if( jTestType.getSelectedIndex()==2 )
@@ -10076,14 +10059,19 @@ Remove(1);
          MWCrit.setText(CritEq);
               medianH0.setText("=");
                medianH1.setText("!=");
+                  W= xcount*ycount-critical_value[13];
+               if(T<W)
+                  MW_alpha.setText(Double.toString(1-(alpha/2)));
+                 else         
+                      MW_alpha.setText(Double.toString(alpha/2));
                
            }
           
           
          N_x.setText(Integer.toString(xcount));
           N_y.setText(Integer.toString(ycount));
-         MW_alpha.setText(Double.toString(alpha));
-         MW_CV.setText(Double.toString(critical_value[13]));
+        
+         
         String  p=String.format("%1.4f",pvalue[13]);
          MW_P.setText(p);
          
@@ -10605,7 +10593,7 @@ Remove(1);
      
    }
     private void j2SampleTTestradiobutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j2SampleTTestradiobutActionPerformed
-       
+        Treatment.setEnabled(false);
        if( j2SampleTTestradiobut.isSelected())
        {TwoSampleT=true;
          jGtestRadioBut.setSelected(false);
@@ -10619,7 +10607,7 @@ Remove(1);
     }//GEN-LAST:event_j2SampleTTestradiobutActionPerformed
 
     private void jChiSquaredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jChiSquaredActionPerformed
-        
+         Treatment.setEnabled(true);
         if(jChiSquared.isSelected())
         {
             
@@ -10635,7 +10623,7 @@ Remove(1);
     }//GEN-LAST:event_jChiSquaredActionPerformed
 
     private void jGtestRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGtestRadioButActionPerformed
-   
+    Treatment.setEnabled(true);
          if(jGtestRadioBut.isSelected())
          {
           Gtest=true;
@@ -10663,7 +10651,7 @@ Remove(1);
     }
     
     private void jUTestRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUTestRadioButActionPerformed
-        
+           Treatment.setEnabled(false);
           if(jUTestRadioBut.isSelected())
           {
              U_Test=true; 
@@ -10681,7 +10669,7 @@ Remove(1);
     }
     
     private void jKSTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKSTestActionPerformed
-        
+           Treatment.setEnabled(false);
           if(jKSTest.isSelected())
           { 
               KS=true;
@@ -10705,7 +10693,9 @@ Remove(1);
     }//GEN-LAST:event_jKSTestActionPerformed
 
     private void jtTestRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtTestRadioButActionPerformed
-        if(jtTestRadioBut.isSelected())
+         Treatment.setEnabled(false);
+         col2.setEnabled(false);
+         if(jtTestRadioBut.isSelected())
           {
              t_Test=true;
               jChiSquared.setSelected(false);
@@ -10714,44 +10704,24 @@ Remove(1);
           jWilcoxanRadioBut.setSelected(false);
           jUTestRadioBut.setSelected(false);
              jVarianceRadioBut.setSelected(false);
-          jTwoSampleVarianceRadioBut.setSelected(false);
+          jFTestRadioBut.setSelected(false);
           }
     }//GEN-LAST:event_jtTestRadioButActionPerformed
-
-    private void jALOSCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jALOSCBActionPerformed
-       
-        Object jALOSCBObj= jALOSCB.getSelectedItem();
-       alpha= Double.parseDouble(jALOSCBObj.toString());
-        if(jALOSCB.getSelectedIndex()>4 )
-        {System.out.println("not allowed");}
-      
-      
-           
-    }//GEN-LAST:event_jALOSCBActionPerformed
 
     private void j2TailedRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j2TailedRadioButtonActionPerformed
          
              j2TailedRadioButton.setSelected(true);
              alpha=alpha/2;
- 
+            j2tailed=true;
             j1Tailed=false;
-           
+          
        
     }//GEN-LAST:event_j2TailedRadioButtonActionPerformed
    
-    private void jTestTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTestTypeActionPerformed
-       int  testtype;
-        
-      Object jTestTypeObj =  jTestType.getSelectedItem();
-       // index=Integer.parseInt( jTestTypeObj .toString());
-       
-       
-      
-    }//GEN-LAST:event_jTestTypeActionPerformed
-
     private void jPaired_tTestRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPaired_tTestRadioButActionPerformed
         if(jPaired_tTestRadioBut.isSelected())
           {
+                 Treatment.setEnabled(false);
               paired_t=true;
                jKSTest.setSelected(false);
               jChiSquared.setSelected(false);
@@ -10760,13 +10730,14 @@ Remove(1);
           jWilcoxanRadioBut.setSelected(false);
           jUTestRadioBut.setSelected(false);
           jVarianceRadioBut.setSelected(false);
-          jTwoSampleVarianceRadioBut.setSelected(false);
+          jFTestRadioBut.setSelected(false);
           }
     }//GEN-LAST:event_jPaired_tTestRadioButActionPerformed
 
     private void jVarianceRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVarianceRadioButActionPerformed
        if(jVarianceRadioBut.isSelected())
           {
+                 Treatment.setEnabled(false);
               one_sample=true;
                jKSTest.setSelected(false);
               jChiSquared.setSelected(false);
@@ -10775,15 +10746,16 @@ Remove(1);
           jWilcoxanRadioBut.setSelected(false);
           jUTestRadioBut.setSelected(false);
           jVarianceRadioBut.setSelected(true);
-          jTwoSampleVarianceRadioBut.setSelected(false);
+          jFTestRadioBut.setSelected(false);
           jPaired_tTestRadioBut.setSelected(false);
           }
     }//GEN-LAST:event_jVarianceRadioButActionPerformed
 
-    private void jTwoSampleVarianceRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTwoSampleVarianceRadioButActionPerformed
-         if(jTwoSampleVarianceRadioBut.isSelected())
+    private void jFTestRadioButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFTestRadioButActionPerformed
+         if(jFTestRadioBut.isSelected())
           {
               Ftest=true;
+              Treatment.setEnabled(false);
                jKSTest.setSelected(false);
               jChiSquared.setSelected(false);
         j2SampleTTestradiobut.setSelected(false);
@@ -10794,7 +10766,7 @@ Remove(1);
           jPaired_tTestRadioBut.setSelected(false);
           }
           
-    }//GEN-LAST:event_jTwoSampleVarianceRadioButActionPerformed
+    }//GEN-LAST:event_jFTestRadioButActionPerformed
 
     private void jSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSaveActionPerformed
 
@@ -11069,8 +11041,7 @@ Remove(1);
         col4.setEditable(false);
         col5.setEditable(false);
         
-        if(chi_squared !=true)
-       Treatment.setEditable(false);
+       
        
 for(int i=0;i<rows;i++)
   {
@@ -11096,8 +11067,8 @@ for(int i=0;i<rows;i++)
           
             header=col1.getText();
             header2=col2.getText();
-            StatsTable.getColumnModel().getColumn(3).setHeaderValue(header);
-            StatsTable.getColumnModel().getColumn(6).setHeaderValue(header2);
+            StatsTable.getColumnModel().getColumn(2).setHeaderValue(header);
+            StatsTable.getColumnModel().getColumn(5).setHeaderValue(header2);
         }
 
         if(chi_squared==true   ||  Gtest==true) 
@@ -11113,10 +11084,10 @@ for(int i=0;i<rows;i++)
 
         if(t_Test==true ||  one_sample==true)
         {
-            col2.setEditable(false);
+            col2.setEnabled(false);
             header=col1.getText();
-            StatsTable.getColumnModel().getColumn(2).setHeaderValue(header);
-            StatsTable.getColumnModel().getColumn(1).setHeaderValue(header);
+            StatsTable.getColumnModel().getColumn(5).setHeaderValue(header);
+              
         }
 
       setColumns();
@@ -11346,6 +11317,7 @@ for(int i=0;i<rows;i++)
     private java.awt.TextField jElfinWidthatBase;
     private javax.swing.JPanel jElfin_Fungus;
     private javax.swing.JTextField jElfincollectorNoEdFeild;
+    private javax.swing.JRadioButton jFTestRadioBut;
     private javax.swing.JLabel jGBCapCharTitlelbl;
     private javax.swing.JPanel jGBCapPanel;
     private javax.swing.JLabel jGBFleshConstlbl;
@@ -11742,7 +11714,6 @@ for(int i=0;i<rows;i++)
     public javax.swing.JComboBox<String> jTestType;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JRadioButton jTwoSampleVarianceRadioBut;
     private javax.swing.JRadioButton jUTestRadioBut;
     private javax.swing.JRadioButton jVarianceRadioBut;
     private javax.swing.JRadioButton jWilcoxanRadioBut;
