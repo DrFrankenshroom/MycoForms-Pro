@@ -10770,6 +10770,41 @@ Remove(3);
 
     private void jSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSaveActionPerformed
 
+         if(GtestPane.isShowing() && Gtest  )
+        {
+            String  gtest="\r\nNull Hypothesis   %s"
+            + "\r\nAlternative Hypothesis   %s"
+            + "\r\n  df   %s"
+            + "\r\n a.l.o.s   %s"
+            + "\r\n G  test value    %s"
+            + "\r\nCritical value   %s"
+            + "\r\n p-value   %s";
+
+            try{
+                File G_test;
+                G_test =new File("Gtest.txt");
+                if(!G_test.exists()){
+                    G_test.createNewFile();
+                }
+
+                FileWriter  fw=  new FileWriter(G_test,true);
+                BufferedWriter  bw =new BufferedWriter(fw);
+                PrintWriter  pw = new PrintWriter(bw);
+                pw.printf(gtest,H0,H1,df,alpha,Gtest,critical_value[8],pvalue[8]);
+                pw.close();
+            }catch(IOException  ioe){
+               
+                ioe.printStackTrace();
+            }
+
+        } 
+        
+ 
+        
+        
+        
+        
+        
         if(FTestPane.isShowing() && Ftest  )
         {
             String  ftest="\r\nNull Hypothesis   %s"
