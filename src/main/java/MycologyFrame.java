@@ -18,9 +18,9 @@ import java.io.File;
 import  java.io.BufferedWriter;
 import  java.io.IOException;
 import java.io.PrintWriter;
+
 import  java.lang.*;
 import java.util.Scanner;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
@@ -7028,6 +7028,11 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
 
         jALOSCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.005", "0.01", "0.10", "0.05", "0.025", "0.2", "0.5" }));
         jALOSCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "alpha  level  of significance  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jALOSCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jALOSCB(evt);
+            }
+        });
 
         jTestType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<=", ">=", "=" }));
         jTestType.setSelectedIndex(1);
@@ -7296,11 +7301,10 @@ Remove(3);
  if(TwoSampleT==true    ||  Ftest==true   || paired_t==true|| U_Test==true)
  {
   
-
   Remove(6);
  Remove(3);
-  Remove(1);
   Remove(2);
+  Remove(1);
  
  }
      
@@ -9972,8 +9976,7 @@ Remove(3);
             if( jTestType.getSelectedIndex() ==0)
                 alpha=1-alpha;
             
-              if( j2tailed==true)
-                alpha=alpha/2;
+          
           
          
         if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
@@ -10015,14 +10018,19 @@ Remove(3);
           
           if(  ( T<=critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
             MW_TestResult.setText(sol1);
-          
+            if(  ( T> critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
+            MW_TestResult.setText(sol1a);
         
            if( ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ) )
           MW_TestResult.setText(sol2);
+             if(  ( T<critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
+            MW_TestResult.setText(sol2a);
            
-            if(  ( (T>critical_value[13]) ||   ( T<critical_value[13]))  &&    (xcount < 20  ||  ycount <20 ) )
+            if(  ( (T> critical_value[13])  ||   ( T<critical_value[13]))  &&    (xcount < 20  ||  ycount <20 ) )
           MW_TestResult.setText(sol3);
-          
+            
+                if(   (T==  critical_value[13])   &&    (xcount < 20  ||  ycount <20 ) )
+              MW_TestResult.setText(sol3a);
           
           
           
@@ -10077,8 +10085,6 @@ Remove(3);
          
              
            
-                 String alt1= String.format("Since G>%5.3f. We  accept H0",critical_value[13]);
-             String alt2= String.format("Since G<%5.3f. We  accep H0",critical_value[13]);
           
           
     }     
@@ -10770,41 +10776,6 @@ Remove(3);
 
     private void jSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSaveActionPerformed
 
-         if(GtestPane.isShowing() && Gtest  )
-        {
-            String  gtest="\r\nNull Hypothesis   %s"
-            + "\r\nAlternative Hypothesis   %s"
-            + "\r\n  df   %s"
-            + "\r\n a.l.o.s   %s"
-            + "\r\n G  test value    %s"
-            + "\r\nCritical value   %s"
-            + "\r\n p-value   %s";
-
-            try{
-                File G_test;
-                G_test =new File("Gtest.txt");
-                if(!G_test.exists()){
-                    G_test.createNewFile();
-                }
-
-                FileWriter  fw=  new FileWriter(G_test,true);
-                BufferedWriter  bw =new BufferedWriter(fw);
-                PrintWriter  pw = new PrintWriter(bw);
-                pw.printf(gtest,H0,H1,df,alpha,Gtest,critical_value[8],pvalue[8]);
-                pw.close();
-            }catch(IOException  ioe){
-               
-                ioe.printStackTrace();
-            }
-
-        } 
-        
- 
-        
-        
-        
-        
-        
         if(FTestPane.isShowing() && Ftest  )
         {
             String  ftest="\r\nNull Hypothesis   %s"
@@ -11132,7 +11103,27 @@ for(int i=0;i<rows;i++)
     private void jH0EdFeildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jH0EdFeildActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jH0EdFeildActionPerformed
-      
+
+    private void jALOSCB(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jALOSCB
+       double report;
+        Object jALOSCBObj = jALOSCB.getSelectedItem();
+       report= Double.parseDouble(jALOSCBObj.toString());
+                    
+       try{
+             if (jALOSCB.getSelectedIndex() >4    &&  U_Test==true )
+             { 
+              
+                 String err= String.format("%2.2f  not supported in Mann- Whitney U  Test",report);
+                 JOptionPane.showMessageDialog(null,err);
+             }
+             
+             else{ 
+                 alpha= Double.parseDouble(jALOSCBObj.toString());
+               U_Test=false;
+             }
+    }catch(Exception e){e.notify();};
+    }//GEN-LAST:event_jALOSCB
+     
     
     /**
      * @param args the command line arguments
