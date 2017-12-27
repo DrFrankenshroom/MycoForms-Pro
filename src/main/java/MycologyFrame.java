@@ -48,7 +48,7 @@ public class MycologyFrame extends javax.swing.JFrame {
 //<editor-fold defaultstate="collapsed" desc="comment">
        
 //</editor-fold>
-    
+   public  static  final  int  NaN  =-1;
     
        double [] pvalue = new double [15];
                double [] critical_value = new double [15];
@@ -104,6 +104,7 @@ String   Volva;
 
 Boolean  KS=false,wilcoxan=false, chi_squared=false,U_Test=false,Ftest=false, j1Tailed=false;
  Boolean  t_Test=false,TwoSampleT=false,Gtest=false,j2tailed=false, paired_t=false,one_sample=false;
+ Boolean  alphaswitch=false;
 double alpha,ttest,paired_Tstat,tStar,zUTest;
  
 String  NullTestOption,ATO,NullOption, _var,ans;
@@ -9847,15 +9848,14 @@ Remove(3);
                 
                
                
-               
+            
                 double x[]=new double[1000];
                   double y[]=new double[1000];
              
                   double   xdata[]=  new  double[1000];
                   double  ydata[]=  new  double[1000];
-              
-                  double T,W=0;   
-                  
+              double T ,W=0;
+                
     
            
             int MWQuantiles_a[] []={
@@ -9969,7 +9969,7 @@ Remove(3);
             ydata=Arrays.copyOf(y,ycount);
             MannWhitneyUTest MW=new  MannWhitneyUTest(NaNStrategy.MINIMAL,TiesStrategy.SEQUENTIAL);
           
-         T=  MW.mannWhitneyU(xdata, ydata);
+         T =  MW.mannWhitneyU(xdata, ydata);
           pvalue[13]= MW.mannWhitneyUTest(xdata, ydata);
           
           
@@ -9977,7 +9977,12 @@ Remove(3);
                 alpha=1-alpha;
             
           
-          
+          if(alphaswitch==false)
+          {
+          critical_value[13]=NaN;
+          alpha= NaN;
+            JOptionPane.showMessageDialog(null,"Input error:Test results invalid.");
+          }
          
         if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
@@ -9998,7 +10003,7 @@ Remove(3);
            
       
               
-          if(  xcount < 20  ||  ycount <20  )
+          if(  (xcount < 20  ||  ycount <20  ) && alphaswitch==true  )
           MW_test.setText(Double.toString(T));
           
           
@@ -10013,35 +10018,34 @@ Remove(3);
                 String CritEq=String.format("Less than or  greater  than %5.3f",T);
               
           
-        
+     
            
-          
-          if(  ( T<=critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
+          if( (alphaswitch==true  ) &&  (xcount < 20  ||  ycount <20  )  )
+          {     
+          if( T<=critical_value[13])   
             MW_TestResult.setText(sol1);
-            if(  ( T> critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
+          else  if(T> critical_value[13])  
             MW_TestResult.setText(sol1a);
-        
-           if( ( T>=critical_value[13])  &&    (xcount < 20  ||  ycount <20  ) )
+          else if(  T>=critical_value[13]) 
           MW_TestResult.setText(sol2);
-             if(  ( T<critical_value[13])  &&  (xcount < 20  ||  ycount <20  ))
+          else if( T<critical_value[13]) 
             MW_TestResult.setText(sol2a);
-           
-            if(  ( (T> critical_value[13])  ||   ( T<critical_value[13]))  &&    (xcount < 20  ||  ycount <20 ) )
+          else if (  ( T> critical_value[13])  || ( T<critical_value[13]))
           MW_TestResult.setText(sol3);
-            
-                if(   (T==  critical_value[13])   &&    (xcount < 20  ||  ycount <20 ) )
+          else if(  T==  critical_value[13])  
               MW_TestResult.setText(sol3a);
+          }
           
           
           
-          if  ( xcount > 20  ||  ycount > 20  )  
+          if  (( xcount > 20  ||  ycount > 20  )  && alphaswitch==true )
           {   
           zUTest  = T-(xcount*ycount/2)/Math.sqrt(xcount*ycount*(xcount+ycount+1)/12);
             MW_test.setText(Double.toString(zUTest));
           }
           
               
-         if( jTestType.getSelectedIndex() ==0)
+         if( jTestType.getSelectedIndex() ==0      &&  alphaswitch==true )
          {
              MWCrit.setText(Critless);
               medianH0.setText("<=");
@@ -10051,7 +10055,7 @@ Remove(3);
               
           }
            
-         if(  jTestType.getSelectedIndex() ==1 )
+         if(  jTestType.getSelectedIndex() ==1    &&  alphaswitch==true  )
          {     
           MWCrit.setText(CritGreater);
          medianH0.setText(">=");
@@ -10062,7 +10066,7 @@ Remove(3);
              MW_alpha.setText(Double.toString(alpha));
          }
          
-           if( jTestType.getSelectedIndex()==2 )
+           if( jTestType.getSelectedIndex()==2    &&  alphaswitch==true )
           {
          MWCrit.setText(CritEq);
               medianH0.setText("=");
@@ -10075,14 +10079,15 @@ Remove(3);
                
            }
           
-          
+          if(alphaswitch==true)
+          {    
          N_x.setText(Integer.toString(xcount));
           N_y.setText(Integer.toString(ycount));
         
-         
         String  p=String.format("%1.4f",pvalue[13]);
          MW_P.setText(p);
-         
+          }
+        
              
            
           
@@ -11108,13 +11113,15 @@ for(int i=0;i<rows;i++)
        double report;
         Object jALOSCBObj = jALOSCB.getSelectedItem();
        report= Double.parseDouble(jALOSCBObj.toString());
+               
                     
        try{
              if (jALOSCB.getSelectedIndex() >4    &&  U_Test==true )
              { 
-              
+               alphaswitch=false;
                  String err= String.format("%2.2f  not supported in Mann- Whitney U  Test",report);
                  JOptionPane.showMessageDialog(null,err);
+              
              }
              
              else{ 
