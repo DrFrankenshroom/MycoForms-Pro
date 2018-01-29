@@ -107,7 +107,7 @@ Boolean  KS=false,wilcoxan=false, chi_squared=false,U_Test=false,Ftest=false, j1
  Boolean  t_Test=false,TwoSampleT=false,Gtest=false,j2tailed=false, paired_t=false,one_sample=false;
  Boolean  alphaswitch=false;
 double alpha,ttest,paired_Tstat,tStar,zUTest;
- 
+  double T ,W=0;
 String  NullTestOption,ATO,NullOption, _var,ans;
   int df=1,index,n0,n1;
     int   xcount=0,ycount=0;
@@ -9872,7 +9872,7 @@ Remove(3);
              
                   double   xdata[]=  new  double[1000];
                   double  ydata[]=  new  double[1000];
-              double T ,W=0;
+             
                 
     
            
@@ -10936,6 +10936,52 @@ Remove(3);
                     ioe.printStackTrace();
                 }
 
+                if( U_Test  & ManWhitneyPane.isShowing() )
+            {
+                String  U_test= "\r\nNull Hypothesis   %s"
+                + "\r\nAlternative Hypothesis   %s"
+                + "\r\ndf   %s"
+                + "\r\na.l.o.s   %s"
+                + "\r\n T =    %s"
+                + "\r\n  T-Crit   %s"
+                + "\r\n p-value   %s";
+
+                try{
+                    File  U_testFile;
+                    U_testFile =new File("U_test.txt");
+                    if(!U_testFile.exists()){
+                        U_testFile.createNewFile();
+                    }
+                    FileWriter  fw=  new FileWriter(U_testFile,true);
+                    BufferedWriter  bw =new BufferedWriter(fw);
+                    PrintWriter  pw = new PrintWriter(bw);
+                    pw.printf(U_test,H0,H1,df,alpha,T,critical_value[13],pvalue[13]);
+                    pw.close();
+                }catch(IOException  ioe){
+                    System.out.println("Error  occured:");
+                    ioe.printStackTrace();
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 if(ChiSquarePane.isShowing() &&  chi_squared)
 
                 {
@@ -11070,8 +11116,8 @@ Remove(3);
         col4.setEditable(false);
         col5.setEditable(false);
         
-       
-       
+      
+  
 for(int i=0;i<rows;i++)
   {
     StatsTable.setValueAt(i+1,i,0);
