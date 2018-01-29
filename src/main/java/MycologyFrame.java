@@ -18,7 +18,7 @@ import java.io.File;
 import  java.io.BufferedWriter;
 import  java.io.IOException;
 import java.io.PrintWriter;
-
+import javax.swing.table.JTableHeader;
 import  java.lang.*;
 import java.util.Scanner;
 import java.awt.event.*;
@@ -39,7 +39,7 @@ import org.apache.commons.math3.stat.inference.TestUtils;
  * @author Dr  Frankenshroom
  */
 
-
+ 
 
 
 public class MycologyFrame extends javax.swing.JFrame {
@@ -49,7 +49,8 @@ public class MycologyFrame extends javax.swing.JFrame {
        
 //</editor-fold>
    public  static  final  int  NaN  =-1;
-    
+    public static volatile int Standard;
+    public static volatile  int TwoSample;
        double [] pvalue = new double [15];
                double [] critical_value = new double [15];
     int  recno =1,dof=1,n=1,df1,df2,y,m;
@@ -113,8 +114,7 @@ String  NullTestOption,ATO,NullOption, _var,ans;
     /**
      * Creates new form MycologyFrame
      */
-
-
+    
 
 
     public MycologyFrame() {
@@ -4447,17 +4447,29 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 StatsTableFocusGained(evt);
             }
         });
+        StatsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                StatsTableMousePressed(evt);
+            }
+        });
         jScrollPane7.setViewportView(StatsTable);
         StatsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (StatsTable.getColumnModel().getColumnCount() > 0) {
             StatsTable.getColumnModel().getColumn(0).setResizable(false);
             StatsTable.getColumnModel().getColumn(0).setPreferredWidth(10);
+            StatsTable.getColumnModel().getColumn(0).setHeaderValue("");
             StatsTable.getColumnModel().getColumn(1).setResizable(false);
+            StatsTable.getColumnModel().getColumn(1).setHeaderValue("Treatment");
             StatsTable.getColumnModel().getColumn(2).setResizable(false);
+            StatsTable.getColumnModel().getColumn(2).setHeaderValue("obs");
             StatsTable.getColumnModel().getColumn(3).setResizable(false);
+            StatsTable.getColumnModel().getColumn(3).setHeaderValue("obs");
             StatsTable.getColumnModel().getColumn(4).setResizable(false);
+            StatsTable.getColumnModel().getColumn(4).setHeaderValue(" obs");
             StatsTable.getColumnModel().getColumn(5).setResizable(false);
+            StatsTable.getColumnModel().getColumn(5).setHeaderValue("obs");
             StatsTable.getColumnModel().getColumn(6).setResizable(false);
+            StatsTable.getColumnModel().getColumn(6).setHeaderValue(" obs");
         }
 
         jClearResults.setText("clear  results");
@@ -7301,11 +7313,17 @@ Remove(3);
  
  if(TwoSampleT==true    ||  Ftest==true   || paired_t==true|| U_Test==true)
  {
-  
+   Standard =  StatsTable.getColumnCount();
   Remove(6);
  Remove(3);
   Remove(2);
-  Remove(1);
+  Remove(1); 
+   TwoSample =  StatsTable.getColumnCount() ;
+
+  
+                                  
+     
+      
  
  }
      
@@ -11045,7 +11063,7 @@ Remove(3);
 
     private void StatsTableFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_StatsTableFocusGained
         String  header,header2,header0,h3,h4,h5;
-        int  cols;
+        int  cols,colcount;
   int rows=StatsTable.getRowCount();
        
         col3.setEditable(false);
@@ -11061,15 +11079,10 @@ for(int i=0;i<rows;i++)
    }
 
        
-
-        StatsTable.setShowGrid(true);
-      
-         TableColumn  c =  new  TableColumn(1);
-         StatsTable.getColumnModel().addColumn(c);
-        StatsTable.getColumnModel().getColumn(1).setHeaderValue("Treatment");
-         Initialize_Table();
-         Remove(7);
+       colcount=StatsTable.getColumnCount();
         
+       StatsTable.setShowGrid(true);
+     
 
         StatsTable.setGridColor(java.awt.Color.black);
         
@@ -11084,7 +11097,11 @@ for(int i=0;i<rows;i++)
 
         if(chi_squared==true   ||  Gtest==true) 
         {
-           
+           TableColumn  c =  new  TableColumn(1);
+        StatsTable.getColumnModel().addColumn(c);
+       StatsTable.getColumnModel().getColumn(1).setHeaderValue("Treatment");
+         Initialize_Table();
+         Remove(7);
             header0=Treatment.getText();
             header=col1.getText();
             header2=col2.getText();
@@ -11130,7 +11147,31 @@ for(int i=0;i<rows;i++)
              }
     }catch(Exception e){e.notify();};
     }//GEN-LAST:event_jALOSCB
+
+    
+    
+    
+    
+    private void StatsTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StatsTableMousePressed
+   
+         StatsTable.addMouseListener(new java.awt.event.MouseAdapter()
+     {
+         @Override
+         public void mousePressed(java.awt.event.MouseEvent  a)
+         {
+         
+                 
+             a.consume();
+            // if(TwoSampleT==true   && count<5 )
+          //   {
+           //  System.out.println(" count="  +count);
+             
+           //  }
+         }
      
+                 });     
+    }//GEN-LAST:event_StatsTableMousePressed
+
     
     /**
      * @param args the command line arguments
