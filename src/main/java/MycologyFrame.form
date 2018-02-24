@@ -7382,8 +7382,14 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="medianH0">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="medianH1">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel210">
                           <Properties>

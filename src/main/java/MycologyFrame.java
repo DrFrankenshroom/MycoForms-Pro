@@ -5129,6 +5129,10 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel209.setForeground(new java.awt.Color(4, 0, 0));
         jLabel209.setText("<html>M<sub>x</sub></html>");
 
+        medianH0.setEditable(false);
+
+        medianH1.setEditable(false);
+
         jLabel210.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel210.setForeground(new java.awt.Color(4, 0, 0));
         jLabel210.setText("<html>N<sub>x</sub></html>");
@@ -9865,8 +9869,7 @@ Remove(3);
            {
                 
                
-               
-            
+    
                 double x[]=new double[1000];
                   double y[]=new double[1000];
              
@@ -10002,6 +10005,9 @@ Remove(3);
             JOptionPane.showMessageDialog(null,"Input error:Test results invalid.");
           }
          
+          
+          if(alphaswitch==true)
+          {   
         if(alpha==0.01 &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_a[xcount-2] [ycount-2];
            
@@ -10015,15 +10021,11 @@ Remove(3);
               if(alpha==0.025  &&  (xcount< 20  ||  ycount<20)    )
             critical_value[13]=MWQuantiles_d[xcount-2] [ycount-2];
               
+         
               
-              
-             
-           
-      
-              
-          if(  (xcount < 20  ||  ycount <20  ) && alphaswitch==true  )
+          if(  (xcount < 20  ||  ycount <20  ) )
           MW_test.setText(Double.toString(T));
-          
+          }
           
           String  sol1 = String.format("Since %5.3f<=%5.3f. We  reject H0",T,critical_value[13]); 
              String sol2 = String.format("Since %5.3f >= %5.3f. We  reject H0",T,W);
@@ -10909,6 +10911,8 @@ Remove(3);
                 
                 ioe.printStackTrace();
             }  }
+        
+        
 
             if(t_Test & tTestPane.isShowing() )
             {
@@ -10934,8 +10938,9 @@ Remove(3);
                 }catch(IOException  ioe){
                     System.out.println("Error  occured:");
                     ioe.printStackTrace();
-                }
+                }}
 
+                
                 if( U_Test  & ManWhitneyPane.isShowing() )
             {
                 String  U_test= "\r\nNull Hypothesis   %s"
@@ -10961,27 +10966,18 @@ Remove(3);
                     System.out.println("Error  occured:");
                     ioe.printStackTrace();
                 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+            }
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+                            
                 if(ChiSquarePane.isShowing() &&  chi_squared)
 
                 {
@@ -11008,10 +11004,8 @@ Remove(3);
                     
                         ioe.printStackTrace();
                     }
-
                 }
-
-            }
+             
     }//GEN-LAST:event_jSaveActionPerformed
 
     private void jClearResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearResultsActionPerformed
@@ -11187,9 +11181,10 @@ for(int i=0;i<rows;i++)
               
              }
              
-             else{ 
-                 alpha= Double.parseDouble(jALOSCBObj.toString());
-               U_Test=false;
+             if((jALOSCB.getSelectedIndex()==1 ||jALOSCB.getSelectedIndex()==3||jALOSCB.getSelectedIndex()==4)  )
+                     { alpha= Double.parseDouble(jALOSCBObj.toString());
+                      alphaswitch=true ;
+              
              }
     }catch(Exception e){e.notify();};
     }//GEN-LAST:event_jALOSCB
