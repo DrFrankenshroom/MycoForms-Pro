@@ -1,0 +1,15 @@
+
+Null Hypothesis   null
+Alternative Hypothesis   null
+df   1
+a.l.o.s   0.975
+ T =    5.0
+  T-Crit   6.0
+ p-value   0.8272593465627113
+Null Hypothesis   null
+Alternative Hypothesis   null
+df   1
+a.l.o.s   0.975
+ T =    5.0
+  T-Crit   6.0
+ p-value   0.8272593465627113

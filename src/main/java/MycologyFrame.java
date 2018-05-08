@@ -11131,7 +11131,7 @@ for(int i=0;i<rows;i++)
           
             header=col1.getText();
             header2=col2.getText();
-            StatsTable.getColumnModel().getColumn(2).setHeaderValue(header);
+            StatsTable.getColumnModel().getColumn(4).setHeaderValue(header);
             StatsTable.getColumnModel().getColumn(5).setHeaderValue(header2);
         }
 
