@@ -7229,13 +7229,18 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
   StatsTable.removeColumn(tcol);
   }
     
+  
+  
     public  void  Insert(int   Start, int  End)
     {
-        if( chi_squared==false|| Gtest==false)
+        int   col=StatsTable.getColumnCount();
+        if( col==2)
         { TableColumn  c =  new  TableColumn(1);
          StatsTable.getColumnModel().addColumn(c);
         StatsTable.getColumnModel().getColumn(1).setHeaderValue("Treatment");
         }
+        
+         
     for(int i=Start;i<End;i++)
     { TableColumn  d=  new  TableColumn(i); StatsTable.getColumnModel().addColumn(d);}
      
@@ -7246,6 +7251,10 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
     }
     
 
+    
+    
+    
+    
 public  void   simplelogger(Exception  e)
 {
   try{  
@@ -11012,8 +11021,8 @@ Remove(3);
         jH0EdFeild.setText("    ");
         jH1EdFeild.setText( "   ");
         col1.setText("   ");
-        Insert(4,5);
-      Initialize_Table();
+       // Insert(4,5);
+     //Initialize_Table();
                  
 
 
