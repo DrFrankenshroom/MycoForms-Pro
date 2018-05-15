@@ -7232,8 +7232,8 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
   
   
     public  void  Insert(int   Start, int  End)
-    {
-        int   col=StatsTable.getColumnCount();
+    {      
+                int   col=StatsTable.getColumnCount();
         if( col==2)
         { TableColumn  c =  new  TableColumn(1);
          StatsTable.getColumnModel().addColumn(c);
