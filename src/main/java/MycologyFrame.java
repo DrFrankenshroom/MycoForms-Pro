@@ -7316,6 +7316,7 @@ Remove(3);
   
  if(t_Test==true   || one_sample==true ||wilcoxan)
  {
+     Standard =  StatsTable.getColumnCount();
  Remove(6);
  for(int count=0;count<=1;++count)
  { Remove(2);

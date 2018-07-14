@@ -48,3 +48,10 @@ a.l.o.s   0.0
 T value    0.5750009480954104
 Critical value   -Infinity
  p-value   0.333501021909964
+Null Hypothesis   1
+Alternative Hypothesis   26
+df   1
+a.l.o.s   0.025
+T value    0.7026628568685545
+Critical value   -4.302652729698312
+ p-value   0.5020067680853195
