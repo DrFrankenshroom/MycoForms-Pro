@@ -10979,14 +10979,7 @@ Remove(3);
             }
             
 
-            
-            
-            
-            
-            
-            
-            
-            
+               
                             
                 if(ChiSquarePane.isShowing() &&  chi_squared)
 
