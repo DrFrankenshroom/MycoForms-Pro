@@ -39,7 +39,10 @@ import org.apache.commons.math3.stat.inference.TestUtils;
  * @author Dr  Frankenshroom
  */
 
- 
+  enum TESTS {
+    T, F,VARIANCE,PAIRED,TWOSAMPLE, CHISQU,
+    GTEST, WILCOXAN, MANNWHITNEY,KENDALTAU, 
+}
 
 
 public class MycologyFrame extends javax.swing.JFrame {
@@ -52,7 +55,7 @@ public class MycologyFrame extends javax.swing.JFrame {
     public static volatile int Standard;
     public static volatile  int TwoSample;
        double [] pvalue = new double [15];
-               double [] critical_value = new double [15];
+               double [] critical_value = new double [15];           
     int  recno =1,dof=1,n=1,df1,df2,y,m;
 String date_format,alphadisplay;
 String  Record,H0,H1;
@@ -63,6 +66,7 @@ JTextArea edField= new JTextArea();
 String [] CollectorNo =new String[4];
 String  [] Photo= new String [4];
 String []Taxon= new String[4];
+int [][]clickcount= new int[10][3];
  double chisquareVal, pval,testvalue;
 /* General  data fields  */
 String TTL_Height,CCHeight,BF_Taste,BF_CapHght,Sporocap;
@@ -119,9 +123,28 @@ String  NullTestOption,ATO,NullOption, _var,ans;
 
     public MycologyFrame() {
         initComponents();
-      
+     
+       clickcount[0][0]= TESTS.T.ordinal();
+       clickcount[1][0]= TESTS.F.ordinal();
+         clickcount[2][0]= TESTS.VARIANCE.ordinal();
+        clickcount[3][0]= TESTS.TWOSAMPLE.ordinal();
+         clickcount[4][0]= TESTS.PAIRED.ordinal();
+        clickcount[5][0]= TESTS.CHISQU.ordinal();
+         clickcount[6][0]= TESTS.GTEST.ordinal();
+        clickcount[7][0]= TESTS.WILCOXAN.ordinal();
+        clickcount[8][0]= TESTS.MANNWHITNEY.ordinal();
+        clickcount[9][0]= TESTS.KENDALTAU.ordinal();
+           
+               
+        for(int  rows=1;rows<10;++rows)
+            for(int  cols=1;cols<3;++cols)
+                clickcount[rows][cols]=0;
+       
      
         
+     
+     
+     
          jCollectorsedField.addKeyListener(new   KeyAdapter()
         {
            public void keyTyped(java.awt.event.KeyEvent evt)
@@ -11019,11 +11042,12 @@ Remove(3);
     }//GEN-LAST:event_jSaveActionPerformed
 
     private void jClearResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearResultsActionPerformed
+       
         jH0EdFeild.setText("    ");
         jH1EdFeild.setText( "   ");
         col1.setText("   ");
-       // Insert(4,5);
-     //Initialize_Table();
+       
+      
                  
 
 
@@ -11043,12 +11067,14 @@ Remove(3);
             Gtestval.setText("  ");
             G_alpha.setText("   ");
             alpha=0.0;
+             if(clickcount[6][1]==clickcount[6][2])   
              Insert(4,5);
            Initialize_Table();
         }
 
         if(tTestPane.isShowing()   &&  t_Test)
-        {
+        { clickcount[0][2]=clickcount[0][2]+1;
+           clickcount[0][1]=1;
             t_alos.setText("   ");
             T_test.setText("     ");
             t_pval.setText("      ");
@@ -11056,9 +11082,10 @@ Remove(3);
             pvalue[1]=0.0;
             testsign.setText("    ");
             H1testsign.setText("    ");
-         
-      Insert(2,5);
-      Initialize_Table();
+      if(clickcount[0][1]==clickcount[0][2])   
+     Insert(2,5);
+      
+      //Initialize_Table();
         }
         if(TwoSampletTestPane.isShowing()   &&  TwoSampleT)
         {
@@ -11076,7 +11103,8 @@ Remove(3);
 
         if(Paired_tTestPanel.isShowing()   &&  paired_t)
         {
-
+         clickcount[0][2]=clickcount[0][2]+1;
+        clickcount[0][1]=1;
             pairedT_H0.setText("    ");
             pairedT_H1.setText("   ");
             pairedTValue.setText("    ");
@@ -11085,12 +11113,15 @@ Remove(3);
             pvalue[3]=0.0;
             critical_value[3]=0.0;
             pairedT_pval.setText("      ");
+             if(clickcount[0][1]==clickcount[0][2])   
                Insert(2,5);
                 Initialize_Table();
         }
 
         if(FTestPane.isShowing() && Ftest  )
         {
+         clickcount[1][2]=clickcount[1][2]+1;
+        clickcount[1][1]=1;
             F_alpha.setText("    ");
             F_Test.setText("    ");
             F_crit.setText("     ");
@@ -11100,6 +11131,7 @@ Remove(3);
             critical_value[7]=0.0;
             critical_value[6]=0.0;
             critical_value[5]=0.0;
+            if(clickcount[1][1]==clickcount[1][2])
                Insert(2,5);
             
       Initialize_Table();
