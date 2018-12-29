@@ -8933,25 +8933,26 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel117" min="-2" pref="44" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="tTestH0" min="-2" pref="95" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                               <Component id="jLabel236" min="-2" pref="31" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="H1testsign" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel115" min="-2" pref="44" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="tTestH1" min="-2" pref="101" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel156" min="-2" pref="31" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                              <Component id="testsign" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel156" min="-2" pref="41" max="-2" attributes="0"/>
                                           </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="HATestSign" pref="31" max="32767" attributes="0"/>
+                                          <Component id="H0TestSign" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -9075,7 +9076,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="tTestH0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="H1testsign" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="H0TestSign" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel236" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -9085,7 +9086,7 @@
                                   <Component id="tTestH1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel115" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel156" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="testsign" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HATestSign" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -9215,10 +9216,9 @@
                         <Property name="editable" type="boolean" value="false"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="testsign">
+                    <Component class="javax.swing.JTextField" name="HATestSign">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="text" type="java.lang.String" value="jTextField3"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel117">
@@ -9301,10 +9301,9 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="H1testsign">
+                    <Component class="javax.swing.JTextField" name="H0TestSign">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="text" type="java.lang.String" value="jTextField4"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="t_alos">
