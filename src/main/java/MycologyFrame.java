@@ -9599,8 +9599,13 @@ Remove(3);
                      
                        if(jTestType.getSelectedIndex()== 0)
                           {
+<<<<<<< HEAD
                       critical_value[1]=t.inverseCumulativeProbability(1- alpha);
                                
+=======
+                              critical_value[1]=t.inverseCumulativeProbability(1- alpha);
+                                            
+>>>>>>> origin/Master_v4.0
                       H0TestSign.setText("<=");
                       HATestSign.setText("<");
                           }
@@ -9608,9 +9613,15 @@ Remove(3);
                           
                            if( jTestType.getSelectedIndex()==1)
                            {
+<<<<<<< HEAD
                            HATestSign.setText(">=");
                             H0TestSign.setText(">");
                            critical_value[1]=t.inverseCumulativeProbability(alpha);
+=======
+                                   HATestSign.setText(">=");
+                      H0TestSign.setText(">");
+                              critical_value[1]=t.inverseCumulativeProbability(alpha);
+>>>>>>> origin/Master_v4.0
                            }
                             
                         sdev=Stats.getStandardDeviation();
@@ -9628,13 +9639,22 @@ Remove(3);
                       t_pval.setText(Double.toString(pvalue[1]));
                        
                      H0=jH0EdFeild.getText();
+<<<<<<< HEAD
                      H1=jH1EdFeild.getText();
+=======
+                     
+>>>>>>> origin/Master_v4.0
                       tTestH0.setText(H0);
                       
                      
                       tTestH1.setText(H1); 
                                  
+<<<<<<< HEAD
                      
+=======
+                      HATestSign.setText(ATO);
+                      H0TestSign.setText(NullOption);
+>>>>>>> origin/Master_v4.0
                     
                       
                       String  c1=String.format(" <= %5.3f",critical_value[2]);
