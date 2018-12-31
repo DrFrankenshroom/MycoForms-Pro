@@ -1,0 +1,17 @@
+
+Null Hypothesis   j
+Alternative Hypothesis   k
+  df1   2
+ df2 2
+ a.l.o.s   0.0
+ F  test value    true
+Critical value   Infinity
+ p-value   NaN
+Null Hypothesis   7
+Alternative Hypothesis   u
+  df1   4
+ df2 4
+ a.l.o.s   0.025
+ F  test value    true
+Critical value   0.06477026927119138
+ p-value   0.9750000000000524

@@ -1,0 +1,8 @@
+
+Null Hypothesis   r
+Alternative Hypothesis   g
+df   3
+ a.l.o.s   0.0
+ Paired- T value    -0.8522258150005123
+Critical value   -Infinity
+ p-value   0.48385853221303443

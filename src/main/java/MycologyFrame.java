@@ -7265,16 +7265,12 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
     for(int i=Start;i<End;i++)
     { TableColumn  d=  new  TableColumn(i); StatsTable.getColumnModel().addColumn(d);}
      
-            
-    
+               
     for(int i=Start;i<StatsTable.getColumnCount();i++)
     StatsTable.getColumnModel().getColumn(i).setHeaderValue("obs ");
     }
     
-
-    
-    
-    
+  
     
 public  void   simplelogger(Exception  e)
 {
@@ -9599,8 +9595,16 @@ Remove(3);
                      
                        if(jTestType.getSelectedIndex()== 0)
                           {
+                       critical_value[1]=t.inverseCumulativeProbability(1- alpha);
+                               
+                              critical_value[1]=t.inverseCumulativeProbability(1- alpha);
+                                            
+
                       critical_value[1]=t.inverseCumulativeProbability(1- alpha);
                                
+                              critical_value[1]=t.inverseCumulativeProbability(1- alpha);
+                                            
+
                       H0TestSign.setText("<=");
                       HATestSign.setText("<");
                           }
@@ -9608,9 +9612,19 @@ Remove(3);
                           
                            if( jTestType.getSelectedIndex()==1)
                            {
+
                            HATestSign.setText(">=");
                             H0TestSign.setText(">");
                            critical_value[1]=t.inverseCumulativeProbability(alpha);
+                                   HATestSign.setText(">=");
+                      H0TestSign.setText(">");
+                              critical_value[1]=t.inverseCumulativeProbability(alpha);
+
+
+                                   HATestSign.setText(">=");
+                      H0TestSign.setText(">");
+                              critical_value[1]=t.inverseCumulativeProbability(alpha);
+
                            }
                             
                         sdev=Stats.getStandardDeviation();
@@ -9625,16 +9639,19 @@ Remove(3);
                       
                       T_test.setText(_t);
                      
-                      t_pval.setText(Double.toString(pvalue[1]));
-                       
+                      t_pval.setText(Double.toString(pvalue[1]));                     
                      H0=jH0EdFeild.getText();
                      H1=jH1EdFeild.getText();
+                     
+
                       tTestH0.setText(H0);
                       
                      
                       tTestH1.setText(H1); 
-                                 
-                     
+
+                      HATestSign.setText(ATO);
+                      H0TestSign.setText(NullOption);
+
                     
                       
                       String  c1=String.format(" <= %5.3f",critical_value[2]);
@@ -9744,12 +9761,12 @@ Remove(3);
                        
                        H02Test.setText(H0);
                        H12Test.setText(H1);
-                //        Object jTestTypeObj =  jTestType.getSelectedIndex();
+                       Object jTestTypeObj =  jTestType.getSelectedIndex();
                
                   
                        if(    jTestType.getSelectedIndex()== 2)
                        {
-                           H0TestSign.setText("=");     
+                           testOption.setText("=");     
                            H0=jH0EdFeild.getText();
                    
                           testOpt2.setText("!=");
@@ -10345,8 +10362,8 @@ Remove(3);
                            
                      critical_value[5]=f_LB.inverseCumulativeProbability(alpha/2);
                    critical_value[6]=f_LB.inverseCumulativeProbability(1-(alpha/2));
-                    L=(v/v1)*(1.0/critical_value[6]);
-                  U=(v/v1)*( 1.0/ critical_value[5]);
+                    L=(v/v1)*(1.0/(critical_value[6]));
+                  U=(v/v1)*( 1.0/ (critical_value[5]));
                          String crit3= String.format("%5.3f<=F<=%5.3f",critical_value[5],critical_value[6]);
                          F_criteria.setText(crit3);
                          critical_value[7]=critical_value[5];
@@ -10375,7 +10392,7 @@ Remove(3);
                   
                   
                   
-                  if( critical_value[7]<=Ftest  &&  j1Tailed==true)
+                  if( critical_value[7]<=Ftest  )
                        
                   { pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
                   String desc= String.format("Since %5.3f< %5.3f,we  reject H0",Ftest,critical_value[7]); 
@@ -10386,7 +10403,7 @@ Remove(3);
                   }
                   
                   
-                if(Ftest<critical_value[7] &&  j1Tailed==true)
+                if(Ftest<critical_value[7] )
                 {   pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
                   String ans= String.format("Since %5.3f<= %5.3f ,we  accept H0",Ftest,critical_value[7]); 
                  String pval2 = String.format("%5.3f",pvalue[7]);
@@ -10395,7 +10412,7 @@ Remove(3);
                     
                 }
                  
-                if(Ftest>critical_value[7] &&   j1Tailed==true )
+                if(Ftest>critical_value[7])
                 {    pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
                   String desc2= String.format("Since %5.3f > %5.3f ,we  reject H0",Ftest,critical_value[7]); 
               F_result.setText(desc2);
@@ -10607,13 +10624,15 @@ Remove(3);
   if(  jTestType.getSelectedIndex() ==0)
   {
       critical_value[3]= t.inverseCumulativeProbability(1- alpha);
-      ATO="<";
+      pairedT_alt.setText("<");
+       NullOpt.setText("<=");
   }
  
    if( jTestType.getSelectedIndex() ==1 )
    {
        critical_value[3] = t.inverseCumulativeProbability(alpha);
-   ATO=">";
+   pairedT_alt.setText(">");
+       NullOpt.setText(">=");
    }
  
     
@@ -11075,9 +11094,9 @@ Remove(3);
             H0TestSign.setText("    ");
       if(clickcount[0][1]==clickcount[0][2])   
      Insert(2,5);
-      
-      //Initialize_Table();
+     Initialize_Table();
         }
+        
         if(TwoSampletTestPane.isShowing()   &&  TwoSampleT)
         { clickcount[3][2]=clickcount[3][2]+1;
         clickcount[3][1]=1;
