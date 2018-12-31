@@ -6,3 +6,10 @@ a.l.o.s   0.025
 2 Sample T value    31.60696125855819
 Critical value   -1.9623414606812308
  p-value   0.3175526601764388
+Null Hypothesis   888
+Alternative Hypothesis   8888
+df   1998
+a.l.o.s   0.025
+2 Sample T value    31.606961258558286
+Critical value   1.9623414606812295
+ p-value   0.31755266017641215

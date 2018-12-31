@@ -9599,8 +9599,8 @@ Remove(3);
                      
                        if(jTestType.getSelectedIndex()== 0)
                           {
-                              critical_value[1]=t.inverseCumulativeProbability(1- alpha);
-                                            
+                      critical_value[1]=t.inverseCumulativeProbability(1- alpha);
+                               
                       H0TestSign.setText("<=");
                       HATestSign.setText("<");
                           }
@@ -9608,9 +9608,9 @@ Remove(3);
                           
                            if( jTestType.getSelectedIndex()==1)
                            {
-                                   HATestSign.setText(">=");
-                      H0TestSign.setText(">");
-                              critical_value[1]=t.inverseCumulativeProbability(alpha);
+                           HATestSign.setText(">=");
+                            H0TestSign.setText(">");
+                           critical_value[1]=t.inverseCumulativeProbability(alpha);
                            }
                             
                         sdev=Stats.getStandardDeviation();
@@ -9628,7 +9628,7 @@ Remove(3);
                       t_pval.setText(Double.toString(pvalue[1]));
                        
                      H0=jH0EdFeild.getText();
-                     
+                     H1=jH1EdFeild.getText();
                       tTestH0.setText(H0);
                       
                      
@@ -9674,31 +9674,39 @@ Remove(3);
                double   num, TwoSampleDev;
                   double obs[]=new  double[1000];
                   double obs2[]=new  double[1000];
-                  int  item;
-                  int  n1;
-                  int n2;
+                  int N=0;
+                  int  n1=1;
+                  int n2=1;
                   double data[]= new  double[1000];
                   double data1[]  = new double[1000];
                     try{
        for(int i=0;  i<=rows;++i)
-    {if (StatsTable != null)
-      {data[i]=Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
-       data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
+    {  
+        if (StatsTable != null)
+      {data[i]=Double.parseDouble(StatsTable.getValueAt(i, 1).toString() );
+       data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
        
+       if( Double.parseDouble(StatsTable.getValueAt(i, 1).toString() ) !=0 )
+       {n1++;
+       n2++;}
       }
-    
+     
      }
        
       }catch(Exception e)   {  
           simplelogger(e);
          //OptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
       }
-               
-          obs = Arrays.copyOf(data,data.length) ;
-           obs2  = Arrays.copyOf(data1,data1.length);
-            n1=data.length;
-            n2=data1.length;
+              
+           obs = Arrays.copyOf(data,n1) ;
+           obs2  = Arrays.copyOf(data1,n2);
+         
+      
+       
             dof=n1+n2-2;
+           
+                    
+                    
             TDistribution t = new TDistribution(n1-1);
            SummaryStatistics Stats = new SummaryStatistics();
                        for (int i = 0; i < obs.length; i++) 
@@ -9767,7 +9775,7 @@ Remove(3);
                            
                          
                    Two_tCritical.setText(Double.toString(critical_value[2]));
-                           
+                      H0=jH0EdFeild.getText();     
                      String  c1=String.format(" t*<= %5.3f",tStar);
          String  c2=String.format("t* >= %5.3f",tStar);
          String  c3=String.format(" t*= %5.3f",tStar);
