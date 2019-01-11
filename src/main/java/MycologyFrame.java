@@ -3,7 +3,7 @@ import   org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 import org.apache.commons.math3.distribution.ChiSquaredDistribution;
 import org.apache.commons.math3.stat.inference.MannWhitneyUTest;
 import org.apache.commons.math3.stat.ranking.NaNStrategy;
-import org.apache.commons.math3.stat.ranking.NaturalRanking;
+import  org.apache.commons.math3.stat.ranking.NaturalRanking;
 import org.apache.commons.math3.stat.ranking.TiesStrategy;
 import org.apache.commons.math3.distribution.TDistribution;
  import org.apache.commons.math3.distribution.FDistribution;
@@ -18,12 +18,12 @@ import java.io.File;
 import  java.io.BufferedWriter;
 import  java.io.IOException;
 import java.io.PrintWriter;
-import javax.swing.table.JTableHeader;
-import  java.lang.*;
-import java.util.Scanner;
+import  javax.swing.table.JTableHeader;
+import    java.lang.*;
+import   java.util.Scanner;
 import java.awt.event.*;
-import java.io.*;
-import javax.swing.*;
+import   java.io.*;
+import  javax.swing.*;
 
  
 import org.apache.commons.math3.stat.inference.TestUtils;
@@ -51,7 +51,7 @@ public class MycologyFrame extends javax.swing.JFrame {
 //<editor-fold defaultstate="collapsed" desc="comment">
        
 //</editor-fold>
-   public  static  final  int  NaN  =-1;
+    public  static  final  int  NaN  =-1;
     public static volatile int Standard;
     public static volatile  int TwoSample;
        double [] pvalue = new double [15];
@@ -145,7 +145,7 @@ String  NullTestOption,ATO,NullOption, _var,ans;
  
          jCollectorsedField.addKeyListener(new   KeyAdapter()
         {
-           public void keyTyped(java.awt.event.KeyEvent evt)
+         public  void keyTyped(java.awt.event.KeyEvent evt)
            {        
            
            if( evt.getKeyCode() == KeyEvent.VK_ENTER)  
@@ -176,7 +176,7 @@ String  NullTestOption,ATO,NullOption, _var,ans;
        jCoralFungusCollectorsEdFeild.addKeyListener(new   KeyAdapter()
         {
         
-           public void keyTyped(java.awt.event.KeyEvent evt)
+           public void  keyTyped(java.awt.event.KeyEvent evt)
            {        
            
            if( evt.getKeyCode() == KeyEvent.VK_ENTER)  
@@ -194,7 +194,7 @@ String  NullTestOption,ATO,NullOption, _var,ans;
 jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         {
         
-           public void keyPressed(java.awt.event.KeyEvent evt)
+           public void  keyPressed(java.awt.event.KeyEvent evt)
            {        
            
            if( evt.getKeyCode() == KeyEvent.VK_ENTER)  
@@ -7279,7 +7279,7 @@ BufferedWriter   out  = new BufferedWriter(f);
 PrintWriter  p =  new PrintWriter(out,true);
 e.printStackTrace(p);
   }
-  catch(Exception err){};
+  catch( Exception err){};
 }
 
 protected  void Initialize_Table()
@@ -7724,7 +7724,7 @@ Remove(3);
             
             FileWriter  fw=  new FileWriter(progFile,true);
             BufferedWriter  bw =new BufferedWriter(fw);
-            PrintWriter  pw = new PrintWriter(bw);
+            PrintWriter   pw = new PrintWriter(bw);
             pw.printf(taxonmsg, Taxon[0],date_format,Collector,CollectorNo[0],Photo[0]);
             pw.printf(genmsg,TTL_Height,GMCap_Width,CCHeight,Odor[0],Taste[0]);
             pw.printf(Colormsg,Spore,Cap_Surface[0], Stem_Surface,Cap_Flesh[0],Stem_Flesh, Hygro,Gills,Mature_Gills );
@@ -7795,7 +7795,7 @@ Remove(3);
                       
            FileWriter  fw=  new FileWriter(progFile,true);
             BufferedWriter  bw =new BufferedWriter(fw);
-            PrintWriter  pw = new PrintWriter(bw);
+           PrintWriter   pw = new PrintWriter(bw);
            pw.printf(taxonmsg,t.Taxon ,date_format,t.editors.getText(),t.colNo,t.PhotoNo);
            pw.printf(genmsg,g.Sporocap,g.Cap_width,g.Cap_height,g.Taste,g.Odour);
            pw.printf(Colormsg,c.Cap_Surface,c.Cap_Flesh,c.Pore_layer,c.Stem_Flesh,c.Stem_Surface,c.Bruising);
@@ -7806,7 +7806,7 @@ Remove(3);
                          
                 }catch(IOException  ioe){
                      System.out.println("Error  occured:");
-                     ioe.printStackTrace();
+                      ioe.printStackTrace();
                 }
 {
     
@@ -7864,7 +7864,7 @@ Remove(3);
                  }   
             FileWriter  fw=  new FileWriter(progFile,true);
             BufferedWriter  bw =new BufferedWriter(fw);
-            PrintWriter  pw = new PrintWriter(bw);
+            PrintWriter   pw = new PrintWriter(bw);
             pw.printf(taxonmsg,t.Taxon ,date_format,t.editors.getText(),t.colNo,t.PhotoNo);
              pw.printf(Chemmsg,ecp.getASCI(),ecp.getA_T(),ecp.getS_O_S());
             pw.printf(genmsg,egp.getSporoCap(),egp.getShape(),egp.getTaste(),egp.getAbhymeniumTexture(),egp.Odor,
@@ -7875,7 +7875,7 @@ Remove(3);
          pw.close();
          }catch(IOException  ioe){
                      System.out.println("Error  occured:");
-                     ioe.printStackTrace();
+                      ioe.printStackTrace();
                 }
                               
        }
@@ -7921,7 +7921,7 @@ Remove(3);
                  }   
             FileWriter  fw=  new FileWriter(progFile,true);
             BufferedWriter  bw =new BufferedWriter(fw);
-            PrintWriter  pw = new PrintWriter(bw);
+            PrintWriter   pw = new PrintWriter(bw);
             pw.printf(taxonmsg,t.Taxon ,date_format,t.editors.getText(),t.colNo,t.PhotoNo);
               pw.printf(genmsg,c_gc.Entire_height,c_gc.Crown_diam,c_gc.Stem_base_width,
                       c_gc.Stem_width,c_gc.Odor,c_gc.getTaste());
@@ -7930,7 +7930,7 @@ Remove(3);
            pw.close();
        }catch(IOException  ioe){
                      System.out.println("Error  occured:");
-                     ioe.printStackTrace();
+                      ioe.printStackTrace();
                 }
 
         
@@ -7976,7 +7976,7 @@ Remove(3);
         { Taxonomy t= new Taxonomy(Taxon[0],null,null,null);}
          else
            JOptionPane.showMessageDialog(null,"Taxon feild is empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch (Exception e){}
+      }catch ( Exception e){}
     }//GEN-LAST:event_jGilledMushroomsTaxonEdFeildActionPerformed
 
     private void jGilledMushroomsPhotoEdFeildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGilledMushroomsPhotoEdFeildActionPerformed
@@ -7988,7 +7988,7 @@ Remove(3);
         {Taxonomy t= new Taxonomy(null,null,Photo[0],null);}
         
       JOptionPane.showMessageDialog(null,"Photo feild is empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception e){}
+      }catch( Exception e){}
     }//GEN-LAST:event_jGilledMushroomsPhotoEdFeildActionPerformed
 
     private void jGilledMushroomColEdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGilledMushroomColEdFieldActionPerformed
@@ -8255,7 +8255,7 @@ Remove(3);
         {Taxonomy t= new Taxonomy(null,CollectorNo[1],null,null);}
         else
         JOptionPane.showMessageDialog(null,"Collector No feild is empty","error",JOptionPane.ERROR_MESSAGE); 
-         }catch(Exception e){}
+         }catch( Exception e){}
     }//GEN-LAST:event_jBFCollectNoEdFldActionPerformed
 
     private void jPhotoNoEdFeildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPhotoNoEdFeildActionPerformed
@@ -8267,7 +8267,7 @@ Remove(3);
        {Taxonomy t= new Taxonomy(null,null,Photo[1],null);}
        else
            JOptionPane.showMessageDialog(null,"Photo No feild is empty","error",JOptionPane.ERROR_MESSAGE);
-       }catch(Exception e){}
+       }catch( Exception e){}
      
        
     }//GEN-LAST:event_jPhotoNoEdFeildActionPerformed
@@ -8293,7 +8293,7 @@ Remove(3);
          {Taxonomy t= new Taxonomy(Taxon[1],null,null, null);}
           else
           JOptionPane.showMessageDialog(null,"Taxonl feild empty","error",JOptionPane.ERROR_MESSAGE);
-        }catch(Exception e) {};
+        }catch( Exception e) {};
     }//GEN-LAST:event_jBFTaxonEdFieldActionPerformed
 
     private void jBFCollectNoEdFldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBFCollectNoEdFldKeyTyped
@@ -8314,8 +8314,8 @@ Remove(3);
          {    General_Characteristics  g= new General_Characteristics(null,Odor[1],null,null,null);   }
         else
             JOptionPane.showMessageDialog(null," Odour feild empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};   
-       
+      }catch( Exception  e){};   
+        
     }//GEN-LAST:event_jBFsmelllEdFieldActionPerformed
 
     private void jBFsmelllEdFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBFsmelllEdFieldKeyTyped
@@ -8344,7 +8344,7 @@ Remove(3);
          {    General_Characteristics  g= new General_Characteristics(null,null,null,BF_CapHght,null);   }
         else
             JOptionPane.showMessageDialog(null," Cap Height feild empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};   
+      }catch( Exception  e){};   
     }//GEN-LAST:event_jBCapHeightActionPerformed
 
     private void jBCapHeightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBCapHeightKeyTyped
@@ -8365,7 +8365,7 @@ Remove(3);
          {    General_Characteristics  g= new General_Characteristics(null,null,BFCap_Width,null,null);   }
         else
             JOptionPane.showMessageDialog(null," Cap Width feild empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};
+      }catch( Exception  e){};
  
     }//GEN-LAST:event_jBCapWidthActionPerformed
 
@@ -8420,7 +8420,7 @@ Remove(3);
          {    Color   c=  new Color( null,jBFCap_Flesh,null,null,null,null);     }
         else
             JOptionPane.showMessageDialog(null," Cap Flesh feild empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};
+      }catch( Exception  e){};
        
     }//GEN-LAST:event_jBGCapFleshEdFieldActionPerformed
 
@@ -8442,7 +8442,7 @@ Remove(3);
          {      Color   c=  new Color( null,null,Pore_Layer,null,null,null); }
         else
             JOptionPane.showMessageDialog(null," Pore feild empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};
+      }catch( Exception  e){};
         Color   c=  new Color( null,null,Pore_Layer,null,null,null);
         
     }//GEN-LAST:event_PoreLayerActionPerformed
@@ -8465,7 +8465,7 @@ Remove(3);
          {    Color   c=  new Color( null,null,null,null,Stem_Flesh,null);   }
         else
             JOptionPane.showMessageDialog(null," Stem Flesh empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};
+      }catch( Exception  e){};
        
     }//GEN-LAST:event_jBFStemFleshActionPerformed
 
@@ -8487,7 +8487,7 @@ Remove(3);
          {   Color   c=  new Color( null,null,null,Stem_Surface,null,null);   }
         else
             JOptionPane.showMessageDialog(null," Stem Surface empty","error",JOptionPane.ERROR_MESSAGE);
-      }catch(Exception  e){};
+      }catch( Exception  e){};
         
     }//GEN-LAST:event_jBFStemSurfaceActionPerformed
 
@@ -9832,8 +9832,8 @@ Remove(3);
          long g1[]=new long[1000];  
          double g2[]=new double[1000];
          
-         double [] expected = new double[1000];
-         long[] observed = new long[1000];
+         double [] expected = new  double[1000];
+         long[] observed = new  long[1000];
          
           try{
        for(int i=0;  i<=4;++i)
@@ -9845,7 +9845,7 @@ Remove(3);
     
      }
        
-      }catch(Exception e)   {simplelogger(e);
+      }catch( Exception e)   {simplelogger(e);
       JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
       }
           
@@ -9919,11 +9919,11 @@ Remove(3);
                 
                
     
-                double x[]=new double[1000];
+                double x[]= new double[1000];
                   double y[]=new double[1000];
              
-                  double   xdata[]=  new  double[1000];
-                  double  ydata[]=  new  double[1000];
+                  double   xdata[]=  new   double[1000];
+                  double  ydata[]=  new   double[1000];
              
                 
     
@@ -10031,7 +10031,7 @@ Remove(3);
                   
      }
     }
-      }catch(Exception e)   {simplelogger(e);}
+      }catch( Exception e)   {simplelogger(e);}
    
   
      
@@ -10216,7 +10216,7 @@ Remove(3);
      }
     }
        
-     }catch(Exception e)   {simplelogger(e);
+     }catch( Exception e)   {simplelogger(e);
      //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
      }
     
@@ -10262,7 +10262,7 @@ Remove(3);
           kendal_pval.setText(Double.toString(pvalue[12]));
           Kendal_descision.setText(Integer.toString(m));
           Kendal_cv.setText(Double.toString(critical_value[12]));
-          String H0= String.format("Since   %2.3f  <%2.3f  we  can't  reject  the Null Hypothesis",test,critical_value[12]);
+          String H0 = String.format("Since   %2.3f  <%2.3f  we  can't  reject  the Null Hypothesis",test,critical_value[12]);
            String Ha= String.format("Since   %2.3f  >%2.3f  we  can  reject  the Null Hypothesis",test,critical_value[12]);
            
            if(test<critical_value[12])
@@ -10279,10 +10279,10 @@ Remove(3);
            
      
       if(FTestPane.isShowing() && Ftest  )
-           {   int df1=0,df2=0;
-                double s1[]=new double[1000];
-                  double s2[]=new double[1000];
-                  double  v,v1,sd,sd1,Ftest,L,U;
+           {   int df1 = 0, df2= 0;
+                double s1[]= new  double[1000];
+                double s2[]= new  double[1000];
+                 double  v,v1,sd,sd1,Ftest,L,U;
                   double   f1[]= new  double[1000];
                   double  f2[]= new  double[1000];
                   
@@ -10297,7 +10297,7 @@ Remove(3);
     
      }
        
-      }catch(Exception e)   {simplelogger(e);
+      }catch( Exception e)   {simplelogger(e);
       //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
      
       }
@@ -10335,7 +10335,7 @@ Remove(3);
                   {   
                          
                           critical_value[7]=f.inverseCumulativeProbability(alpha);
-                         String criteria = String.format("F>=%5.3f",critical_value[7]);
+                         String  criteria = String.format("F>=%5.3f",critical_value[7]);
                         F_criteria.setText(criteria);
                         F_H0_sign.setText(">=");
                         F_H1_sign.setText(">");
@@ -10407,7 +10407,7 @@ Remove(3);
                   
                 if(Ftest<critical_value[7] )
                 {   pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
-                  String ans= String.format("Since %5.3f<= %5.3f ,we  accept H0",Ftest,critical_value[7]); 
+                  String  ans = String.format("Since %5.3f<= %5.3f ,we  accept H0",Ftest,critical_value[7]); 
                  String pval2 = String.format("%5.3f",pvalue[7]);
                    F_pvalue.setText(pval2);
                    F_result.setText(ans);
@@ -10434,8 +10434,8 @@ Remove(3);
      if(OneSampleVariancePane.isShowing()  &&  one_sample)
            {
                
-               double  var,num,beta=0,LBcv=1,UBcv=1;
-                 double sample[]=new double[1000];
+               double  var,num,beta= 0,LBcv=1,UBcv=1;
+                 double sample[] = new double[1000];
                  int sample_count=0;
                  double  [] variance_t= new double [1000]; 
                  
@@ -10446,7 +10446,7 @@ Remove(3);
        variance_t[i]= Double.parseDouble(StatsTable.getValueAt(i, 1).toString() ); 
       ++sample_count;
       } }  
-      }catch(Exception e)   {simplelogger(e);
+      }catch( Exception e)   {simplelogger(e);
       //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info."); 
       
       }
@@ -10571,8 +10571,8 @@ Remove(3);
          double t1[]= new double[1000];
          
          boolean pairedTtest;
-     double sample1[]=new  double[1000];
-        double sample2[]=new double[1000];
+     double sample1[]= new  double[1000];
+        double sample2[]= new double[1000];
                
                  
        try{
@@ -10585,7 +10585,7 @@ Remove(3);
     
      }
        
-      }catch(Exception e)   {simplelogger(e);}
+      }catch( Exception e)   {simplelogger(e);}
          sample1 = Arrays.copyOf(t0,dof) ;
           sample2  = Arrays.copyOf(t1,dof);         
                  
@@ -10607,13 +10607,13 @@ Remove(3);
      pairedT_H0.setText(H0);
      pairedT_H1.setText(H1);     
      paired_Tstat= TestUtils.pairedT(sample1, sample2);
-      String ans = String.format("%1.3f",paired_Tstat);
+      String  ans = String.format("%1.3f",paired_Tstat);
    pairedTValue.setText(ans);
         
              ALOSPairedt.setText(Double.toString(alpha));
            pairedT_df.setText(Integer.toString(dof));
     pvalue[3]=TestUtils.pairedTTest(sample1, sample2);
-     String _pval= String.format("%1.3f",pvalue[3]);
+     String  _pval= String.format("%1.3f",pvalue[3]);
      pairedT_pval.setText(_pval);
      
  
@@ -10638,8 +10638,8 @@ Remove(3);
        NullOpt.setText(">=");
    }
  
-    
-     String CV = String.format("%1.3f",critical_value[3]);
+     
+     String   CV = String.format("%1.3f",critical_value[3]);
      pairedT_CV.setText(CV);
     
       NullOpt.setText(NullTestOption);
@@ -10873,12 +10873,12 @@ Remove(3);
 
                 FileWriter  fw=  new FileWriter(F_test,true);
                 BufferedWriter  bw =new BufferedWriter(fw);
-                PrintWriter  pw = new PrintWriter(bw);
+                PrintWriter   pw = new PrintWriter(bw);
                 pw.printf(ftest,H0,H1,df1,df2,alpha,Ftest,critical_value[7],pvalue[7]);
                 pw.close();
             }catch(IOException  ioe){
                
-                ioe.printStackTrace();
+                  ioe.printStackTrace();
             }
 
         }
@@ -10901,12 +10901,11 @@ Remove(3);
 
                 FileWriter  fw=  new FileWriter(var_test,true);
                 BufferedWriter  bw =new BufferedWriter(fw);
-                PrintWriter  pw = new PrintWriter(bw);
+                PrintWriter   pw = new PrintWriter(bw);
                 pw.printf(vartest,H0,H1,n,alpha,_var,critical_value[4],pvalue[4]);
                 pw.close();
-            }catch(IOException  ioe){
-             
-                ioe.printStackTrace();
+            }catch(IOException  ioe){  
+                 ioe.printStackTrace();
             }
         }
 
@@ -10928,13 +10927,13 @@ Remove(3);
                 }
                 FileWriter  fw=  new FileWriter(pairedt_testFile,true);
                 BufferedWriter  bw =new BufferedWriter(fw);
-                PrintWriter  pw = new PrintWriter(bw);
+                PrintWriter   pw = new PrintWriter(bw);
                 pw.printf(pairedt_test,H0,H1,dof,alpha,paired_Tstat,critical_value[3],pvalue[3]);
 
                 pw.close();
             }catch(IOException  ioe){
      
-                ioe.printStackTrace();
+                 ioe.printStackTrace();
             }
         }
 
@@ -10956,12 +10955,12 @@ Remove(3);
                 }
                 FileWriter  fw=  new FileWriter(t2_testFile,true);
                 BufferedWriter  bw =new BufferedWriter(fw);
-                PrintWriter  pw = new PrintWriter(bw);
+                PrintWriter   pw = new PrintWriter(bw);
                 pw.printf(t2_test,H0,H1,dof,alpha,  tStar ,critical_value[2],pvalue[2]);
                 pw.close();
             }catch(IOException  ioe){
                 
-                ioe.printStackTrace();
+                 ioe.printStackTrace();
             }  }
         
         
@@ -10977,7 +10976,7 @@ Remove(3);
                 + "\r\n p-value   %s";
 
                 try{
-                    File  t_testFile;
+                    File   t_testFile;
                     t_testFile =new File("t_test.txt");
                     if(!t_testFile.exists()){
                         t_testFile.createNewFile();
@@ -10989,7 +10988,7 @@ Remove(3);
                     pw.close();
                 }catch(IOException  ioe){
                     System.out.println("Error  occured:");
-                    ioe.printStackTrace();
+                     ioe.printStackTrace();
                 }}
 
                 
@@ -11011,12 +11010,12 @@ Remove(3);
                     }
                     FileWriter  fw=  new FileWriter(U_testFile,true);
                     BufferedWriter  bw =new BufferedWriter(fw);
-                    PrintWriter  pw = new PrintWriter(bw);
+                    PrintWriter   pw = new PrintWriter(bw);
                     pw.printf(U_test,H0,H1,df,alpha,T,critical_value[13],pvalue[13]);
                     pw.close();
                 }catch(IOException  ioe){
                     System.out.println("Error  occured:");
-                    ioe.printStackTrace();
+                     ioe.printStackTrace();
                 }
             }
             
@@ -11042,12 +11041,12 @@ Remove(3);
                         }
                         FileWriter  fw=  new FileWriter(ChitestFile,true);
                         BufferedWriter  bw =new BufferedWriter(fw);
-                        PrintWriter  pw = new PrintWriter(bw);
+                        PrintWriter   pw = new PrintWriter(bw);
                         pw.printf(chitest,H0,H1,df,alpha,chisquareVal,critical_value[0],pvalue[0]);
                         pw.close();
                     }catch(IOException  ioe){
                     
-                        ioe.printStackTrace();
+                         ioe.printStackTrace();
                     }
                 }
              
@@ -11113,7 +11112,6 @@ Remove(3);
        
      
 
-
         if(ChiSquarePane.isShowing() &&  chi_squared)
         {
             alphaDisplay.setText(null);
@@ -11149,7 +11147,7 @@ Remove(3);
             
       if(clickcount[0][1]==clickcount[0][2])   
        Insert(2,5);
-       Initialize_Table();
+        Initialize_Table();
        
         }
         
@@ -11291,7 +11289,7 @@ for(int i=0;i<rows;i++)
                       alphaswitch=true ;
               
              }
-    }catch(Exception e){e.notify();};
+    }catch( Exception e){e.notify();};
     }//GEN-LAST:event_jALOSCB
 
     
