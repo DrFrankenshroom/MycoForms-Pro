@@ -39,10 +39,8 @@ import org.apache.commons.math3.stat.inference.TestUtils;
  * @author Dr  Frankenshroom
  */
 
-  enum TESTS {
-    T, F,VARIANCE,PAIRED,TWOSAMPLE, CHISQU,
-    GTEST, WILCOXAN, MANNWHITNEY,KENDALTAU, 
-}
+ 
+
 
 
 public class MycologyFrame extends javax.swing.JFrame {
@@ -124,21 +122,7 @@ String  NullTestOption,ATO,NullOption, _var,ans;
     public MycologyFrame() {
         initComponents();
      
-       clickcount[0][0]= TESTS.T.ordinal();
-       clickcount[1][0]= TESTS.F.ordinal();
-         clickcount[2][0]= TESTS.VARIANCE.ordinal();
-        clickcount[3][0]= TESTS.TWOSAMPLE.ordinal();
-         clickcount[4][0]= TESTS.PAIRED.ordinal();
-        clickcount[5][0]= TESTS.CHISQU.ordinal();
-         clickcount[6][0]= TESTS.GTEST.ordinal();
-        clickcount[7][0]= TESTS.WILCOXAN.ordinal();
-        clickcount[8][0]= TESTS.MANNWHITNEY.ordinal();
-        clickcount[9][0]= TESTS.KENDALTAU.ordinal();
-           
-               
-        for(int  rows=1;rows<10;++rows)
-            for(int  cols=1;cols<3;++cols)
-                clickcount[rows][cols]=0;
+     
        
      
         
@@ -2281,7 +2265,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addComponent(jLabel61)
                 .addGap(7, 7, 7)
                 .addComponent(jElfinSurfaceColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jElfin_FungusLayout = new javax.swing.GroupLayout(jElfin_Fungus);
@@ -3621,7 +3605,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             jGilledFungusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGilledFungusLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 909, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
         );
 
@@ -4466,9 +4450,6 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         StatsTable.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 StatsTableFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                StatsTableFocusLost(evt);
             }
         });
         StatsTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5723,11 +5704,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                                 .addGap(25, 25, 25))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TwoSampletTestPaneLayout.createSequentialGroup()
                                 .addGap(246, 246, 246)
-                                .addComponent(jLabel196, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(TwoSampletTestPaneLayout.createSequentialGroup()
-                                .addComponent(jLabel198, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(101, 101, 101))
-                            .addComponent(twoSampleTresult, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel196, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(TwoSampletTestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(TwoSampletTestPaneLayout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -5737,10 +5714,17 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                                 .addComponent(TwoTest_pval, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(TwoSampletTestPaneLayout.createSequentialGroup()
                         .addGap(220, 220, 220)
-                        .addComponent(jLabel197, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(twoSampleCrit, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(TwoSampletTestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel198, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(TwoSampletTestPaneLayout.createSequentialGroup()
+                                .addComponent(jLabel197, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(twoSampleCrit, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TwoSampletTestPaneLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(twoSampleTresult, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(158, 158, 158))
         );
         TwoSampletTestPaneLayout.setVerticalGroup(
             TwoSampletTestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5796,11 +5780,11 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                         .addGroup(TwoSampletTestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel197, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(twoSampleCrit))))
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel198, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(twoSampleTresult, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addGap(52, 52, 52))
         );
 
         StatsWindowPane.addTab("2-Sample t-test ", TwoSampletTestPane);
@@ -7228,11 +7212,11 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(588, 588, 588))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(MycologyMultiplex, javax.swing.GroupLayout.PREFERRED_SIZE, 999, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MycologyMultiplex.getAccessibleContext().setAccessibleName("Coral");
@@ -7351,10 +7335,6 @@ Remove(3);
   Remove(1); 
    TwoSample =  StatsTable.getColumnCount() ;
 
-  
-                                  
-     
-      
  
  }
      
@@ -9618,16 +9598,16 @@ Remove(3);
                             H0TestSign.setText(">");
            
                                    HATestSign.setText(">=");
-                      H0TestSign.setText(">");
+                                H0TestSign.setText(">");
                               critical_value[1]=t.inverseCumulativeProbability(alpha);
 
 
                                    HATestSign.setText(">=");
-                      H0TestSign.setText(">");
+                                  H0TestSign.setText(">");
                               critical_value[1]=t.inverseCumulativeProbability(alpha);
 
                                    HATestSign.setText(">=");
-                      H0TestSign.setText(">");
+                               H0TestSign.setText(">");
                               critical_value[1]=t.inverseCumulativeProbability(alpha);
                            }
                             
@@ -9691,6 +9671,7 @@ Remove(3);
     if(TwoSampletTestPane.isShowing() &&  TwoSampleT)
            {  double  TwoSampleTest,var,  n1_den,n2_den,den;
                double   num, TwoSampleDev;
+              
                   double obs[]=new  double[1000];
                   double obs2[]=new  double[1000];
                   int N=0;
@@ -9698,6 +9679,7 @@ Remove(3);
                   int n2=1;
                   double data[]= new  double[1000];
                   double data1[]  = new double[1000];
+                  TwoSampleT= false;
                     try{
        for(int i=0;  i<=rows;++i)
     {  
@@ -9719,13 +9701,9 @@ Remove(3);
               
            obs = Arrays.copyOf(data,n1) ;
            obs2  = Arrays.copyOf(data1,n2);
-         
-      
-       
+        
             dof=n1+n2-2;
-           
-                    
-                    
+          
             TDistribution t = new TDistribution(n1-1);
            SummaryStatistics Stats = new SummaryStatistics();
                        for (int i = 0; i < obs.length; i++) 
@@ -9820,10 +9798,7 @@ Remove(3);
                twoSampleCrit.setText(c2);
                  if(critical_value[2]==tStar)
                   twoSampleCrit.setText(c3);
-                      
-      
-      
-                           
+                                                
     }                    
     
     
@@ -9917,16 +9892,11 @@ Remove(3);
    if(ManWhitneyPane.isShowing() &&  U_Test)
            {
                 
-               
-    
                 double x[]= new double[1000];
-                  double y[]=new double[1000];
-             
-                  double   xdata[]=  new   double[1000];
-                  double  ydata[]=  new   double[1000];
-             
-                
-    
+                double y[]=new double[1000];
+                double   xdata[]=  new   double[1000];
+                double  ydata[]=  new   double[1000];
+                 
            
             int MWQuantiles_a[] []={
            {3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5}, 
@@ -10282,10 +10252,12 @@ Remove(3);
            {   int df1 = 0, df2= 0;
                 double s1[]= new  double[1000];
                 double s2[]= new  double[1000];
-                 double  v,v1,sd,sd1,Ftest,L,U;
+                 double  v,v1,sd,sd1 ,L,U;
                   double   f1[]= new  double[1000];
                   double  f2[]= new  double[1000];
+                  double  F_Test_stat= 0.0;
                   
+           
             try{
        for(int i=0;  i<=5;++i)
     {if (StatsTable.getValueAt(i,0) != null)
@@ -10318,7 +10290,7 @@ Remove(3);
                 v1=ftest2.getVariance();
                 sd=ftest.getStandardDeviation();
                 sd1=ftest2.getStandardDeviation();
-                 Ftest=(v/sd)/(v1/sd1)  ;
+                 F_Test_stat=(v/sd)/(v1/sd1)  ;
              FDistribution  f=   new FDistribution(s1.length-1,s2.length-1);
                FDistribution  f_UB=   new FDistribution(s1.length-1,s2.length-1);
                 FDistribution  f_LB=   new FDistribution(s1.length-1,s2.length-1);
@@ -10326,7 +10298,7 @@ Remove(3);
                 H1=jH1EdFeild.getText();
                F_H0.setText(H0);
                F_H1.setText(H1);
-               String _ftest= String.format("%5.3f",Ftest);
+               String _ftest= String.format("%5.3f",F_Test_stat);
                 F_Test.setText(_ftest);
               f_df1.setText(Integer.toString(s1.length-1));
               F_df2.setText(Integer.toString(s2.length-1));
@@ -10394,7 +10366,7 @@ Remove(3);
                   
                   
                   
-                  if( critical_value[7]<=Ftest  )
+                  if( critical_value[7]<=F_Test_stat )
                        
                   { pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
                   String desc= String.format("Since %5.3f< %5.3f,we  reject H0",Ftest,critical_value[7]); 
@@ -10405,7 +10377,7 @@ Remove(3);
                   }
                   
                   
-                if(Ftest<critical_value[7] )
+                if(F_Test_stat<critical_value[7] )
                 {   pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
                   String  ans = String.format("Since %5.3f<= %5.3f ,we  accept H0",Ftest,critical_value[7]); 
                  String pval2 = String.format("%5.3f",pvalue[7]);
@@ -10414,7 +10386,7 @@ Remove(3);
                     
                 }
                  
-                if(Ftest>critical_value[7])
+                if(F_Test_stat>critical_value[7])
                 {    pvalue[7]=1-f.cumulativeProbability(critical_value[7]);
                   String desc2= String.format("Since %5.3f > %5.3f ,we  reject H0",Ftest,critical_value[7]); 
               F_result.setText(desc2);
@@ -10976,7 +10948,7 @@ Remove(3);
                 + "\r\n p-value   %s";
 
                 try{
-                    File   t_testFile;
+                    File t_testFile;
                     t_testFile =new File("t_test.txt");
                     if(!t_testFile.exists()){
                         t_testFile.createNewFile();
@@ -11058,7 +11030,8 @@ Remove(3);
         jH1EdFeild.setText( null);
         col1.setText(null);
         col2.setText(null);
-      
+        StatsTable.invalidate();
+       
          if( Ftest==true  || TwoSampleT==true||paired_t==true|| U_Test==true)
         {
                 
@@ -11078,14 +11051,10 @@ Remove(3);
             pvalue[4]=0.0;
             critical_value[4]=0.0;
           
-            
-            if(clickcount[2][1]==clickcount[1][2])
-               Insert(2,5);      
-             Initialize_Table();
+               
         }
          
-          
-        
+      
       if(FTestPane.isShowing() && Ftest  )
         {
          clickcount[1][2]=clickcount[1][2]+1;
@@ -11099,16 +11068,13 @@ Remove(3);
             critical_value[7]=0.0;
             critical_value[6]=0.0;
             critical_value[5]=0.0;
-            
-            if(clickcount[1][1]==clickcount[1][2])
-               Insert(2,5);      
-             Initialize_Table();
+              
         }
         
        
-        jH0EdFeild.setText("    ");
-        jH1EdFeild.setText( "   ");
-        col1.setText("   ");
+        jH0EdFeild.setText(null);
+        jH1EdFeild.setText(null);
+        col1.setText(null);
        
      
 
@@ -11129,9 +11095,7 @@ Remove(3);
             Gtestval.setText(null);
             G_alpha.setText(null);
             alpha=0.0;
-             if(clickcount[6][1]==clickcount[6][2])   
-             Insert(4,5);
-           Initialize_Table();
+            
         }
 
         if(tTestPane.isShowing()   &&  t_Test)
@@ -11145,13 +11109,11 @@ Remove(3);
             HATestSign.setText(null);
             H0TestSign.setText(null);
             
-      if(clickcount[0][1]==clickcount[0][2])   
-       Insert(2,5);
-        Initialize_Table();
        
         }
         
         if(TwoSampletTestPane.isShowing()   &&  TwoSampleT)
+            
         { clickcount[3][2]=clickcount[3][2]+1;
         clickcount[3][1]=1;
             ALOS_tSample.setText(null);
@@ -11163,15 +11125,14 @@ Remove(3);
             critical_value[2]=0.0;
             TwoTest_pval.setText(null);
             TwoSampleT = false;
-           if(clickcount[3][1]==clickcount[3][2])
-             Insert(2,5);
-              Initialize_Table();
+           
+              
+              
         }
 
         if(Paired_tTestPanel.isShowing()   &&  paired_t)
         {
-         clickcount[4][2]=clickcount[4][2]+1;
-        clickcount[4][1]=1;
+       
             pairedT_H0.setText(null);
             pairedT_H1.setText(null);
             pairedTValue.setText(null);
@@ -11180,15 +11141,11 @@ Remove(3);
             pvalue[3]=0.0;
             critical_value[3]=0.0;
             pairedT_pval.setText(null);
-             if(clickcount[4][1]==clickcount[4][2])   
-               Insert(2,5);
-                Initialize_Table();
-        }
+           
 
         if(FTestPane.isShowing() && Ftest  )
         {
-         clickcount[1][2]=clickcount[1][2]+1;
-        clickcount[1][1]=1;
+         
             F_alpha.setText(null);
             F_Test.setText(null);
             F_crit.setText(null);
@@ -11198,10 +11155,8 @@ Remove(3);
             critical_value[7]=0.0;
             critical_value[6]=0.0;
             critical_value[5]=0.0;
-            if(clickcount[1][1]==clickcount[1][2])
-               Insert(2,5);      
-             Initialize_Table();
-        }
+           
+        }} 
     }//GEN-LAST:event_jClearResultsActionPerformed
 
     private void NULLTextDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NULLTextDisplayActionPerformed
@@ -11315,13 +11270,6 @@ for(int i=0;i<rows;i++)
      
                  });     
     }//GEN-LAST:event_StatsTableMousePressed
-
-    private void StatsTableFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_StatsTableFocusLost
-
-       
-       StatsTable.revalidate();
-       
-    }//GEN-LAST:event_StatsTableFocusLost
 
     
     /**
