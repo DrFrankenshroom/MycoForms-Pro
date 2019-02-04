@@ -10242,11 +10242,7 @@ Remove(3);
            }
         
                 
-    
-            
-             
-               
-           
+     
      
       if(FTestPane.isShowing() && Ftest  )
            {   int df1 = 0, df2= 0;
