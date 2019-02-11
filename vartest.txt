@@ -1,0 +1,8 @@
+
+Null Hypothesis   v
+Alternative Hypothesis   s
+  N  3
+ a.l.o.s   0.05
+ 1- Sample Variance value    91.221
+Critical value   0.08386462053184457
+ p-value   0.9589346884097191
