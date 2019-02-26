@@ -15,3 +15,27 @@ Alternative Hypothesis   u
  F  test value    true
 Critical value   0.06477026927119138
  p-value   0.9750000000000524
+Null Hypothesis   y
+Alternative Hypothesis   y
+  df1   0
+ df2 0
+ a.l.o.s   0.05
+ F  test value    true
+Critical value   0.05263157894736986
+ p-value   0.9499999999999987
+Null Hypothesis   g
+Alternative Hypothesis   gf
+  df1   0
+ df2 0
+ a.l.o.s   0.025
+ F  test value    true
+Critical value   38.999999999999915
+ p-value   1.0
+Null Hypothesis   h
+Alternative Hypothesis   h
+  df1   0
+ df2 0
+ a.l.o.s   0.025
+ F  test value    true
+Critical value   0.01265822784853183
+ p-value   1.0
