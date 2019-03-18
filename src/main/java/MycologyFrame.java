@@ -5848,6 +5848,8 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         tResult.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         tResult.setForeground(new java.awt.Color(17, 2, 2));
 
+        t_Critical.setEditable(false);
+
         jLabel130.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel130.setForeground(new java.awt.Color(7, 0, 0));
         jLabel130.setText("<html> &mu  <sub>2</sub></html>");
@@ -9476,91 +9478,9 @@ Remove(3);
        int  rows=StatsTable.getRowCount();
          int df=1;
 
-                         
-     
-        
-        if(ChiSquarePane.isShowing()  &&  chi_squared)
-           {   
-                
-         long [] observed =  new long[100];
-         double [] expected  = new double[100];
-         long data[]  = new long[100];
-         double data1[]  = new double[100];
-       
-       try{
-       for(int i=0;  i<=rows;++i)
-    {if (StatsTable.getValueAt(i,0) != null)
-      {data[i]=Long.parseLong(StatsTable.getValueAt(i, 2).toString() );
-         data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
-      df++;
-       
-      }
-    
-     }
-       
-      }catch(Exception e)   {
-            //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
-          simplelogger(e);}
-       
-     
-  
-      expected = Arrays.copyOf(data1,df-1);
-  observed  = Arrays.copyOf(data,df-1) ;
-     
-             if(expected.length==observed.length)
-              {    
-             ChiSquaredDistribution  chi  =  new ChiSquaredDistribution(df,alpha) ;
-              
-              chisquareVal=TestUtils.chiSquare(expected, observed);
-                String  _chi= String.format("%1.3f",chisquareVal);
-              critical_value[0]=  chi.inverseCumulativeProbability(alpha);
-               String CV=String.format("%1.3f",critical_value[0]);
-              pvalue[0]=TestUtils.chiSquareTest(expected, observed);
-             _pval= String.format("%1.3f",pvalue[0]);
-              DOFDisplay.setText(Double.toString(df));
-              pValueDisplay.setText(_pval);
-              
-                     H0=jH0EdFeild.getText();
-                      
-                      H1=jH1EdFeild.getText();
-                     
-                 NULLTextDisplay.setText(H0);
-               H1Displayfeild.setText(H1);
-               alphaDisplay.setText(Double.toString(alpha));
-         
-              jChiValueDisplay.setText(_chi);
-               jCriticalDisplay.setText(CV);
-               
-                String  c1=String.format(" <= %5.3f",critical_value[0]);
-         String  c2=String.format(" >= %5.3f",critical_value[0]);
-         String  c3=String.format(" = %5.3f",critical_value[0]);
-      String  lessthan= String.format("  %2.3f <= %2.3f  we  can  accept  the Null Hypothesis",  chisquareVal,critical_value[0]);
-     String  GTthan= String.format("  %2.3f >= %2.3f  we  can  accept  the Null Hypothesis",  chisquareVal,critical_value[0]);     
-            String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can  reject  the Null Hypothesis",chisquareVal,critical_value[0]);
-       String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",chisquareVal,critical_value[0]);
-           
-               if(critical_value[0]<=  chisquareVal)
-               kiCriteria.setText(c1);
-                  if(critical_value[0]>=  chisquareVal)
-               kiCriteria.setText(c2);
-                 if(critical_value[0]==  chisquareVal)
-               kiCriteria.setText(c3);
-               
-              if(critical_value[0]<=  chisquareVal)
-               resultDisplay.setText(lessthan);
-                  if(critical_value[0]>=  chisquareVal)
-               resultDisplay.setText(GTthan);
-                 if(critical_value[0]==  chisquareVal)
-               resultDisplay.setText(c3);
-              }
-           }
-        
-        
-        
-        if(OneSampleVariancePane.isShowing()  &&  one_sample)
+         if(OneSampleVariancePane.isShowing()  &&  one_sample)
            {
-                                System.out.print("working");
-                 System.out.print("working");
+                                
 
                double  var,num,beta= 0,LBcv=1,UBcv=1;
                  double sample[] = new double[1000];
@@ -9572,7 +9492,7 @@ Remove(3);
              {if (StatsTable.getValueAt(i,0)  != null)
       {
        variance_t[i]= Double.parseDouble(StatsTable.getValueAt(i, 1).toString() ); 
-      ++sample_count;
+     sample_count=sample_count+1;
       } }  
       }catch( Exception e)   {simplelogger(e);
       //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info."); 
@@ -9692,68 +9612,84 @@ Remove(3);
            
    
            } 
+                      
      
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        if(ChiSquarePane.isShowing()  &&  chi_squared)
+           {   
+                 System.out.print("working"); 
+         long [] observed =  new long[100];
+         double [] expected  = new double[100];
+         long data[]  = new long[100];
+         double data1[]  = new double[100];
+       
+       try{
+       for(int i=0;  i<=rows;++i)
+    {if (StatsTable.getValueAt(i,0) != null)
+      {data[i]=Long.parseLong(StatsTable.getValueAt(i, 2).toString() );
+         data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
+      df++;
+       
+      }
+    
+     }
+       
+      }catch(Exception e)   {
+            //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
+          simplelogger(e);}
+       
+     
+  
+      expected = Arrays.copyOf(data1,df-1);
+  observed  = Arrays.copyOf(data,df-1) ;
+     
+             if(expected.length==observed.length)
+              {    
+             ChiSquaredDistribution  chi  =  new ChiSquaredDistribution(df,alpha) ;
+              
+              chisquareVal=TestUtils.chiSquare(expected, observed);
+                String  _chi= String.format("%1.3f",chisquareVal);
+              critical_value[0]=  chi.inverseCumulativeProbability(alpha);
+               String CV=String.format("%1.3f",critical_value[0]);
+              pvalue[0]=TestUtils.chiSquareTest(expected, observed);
+             _pval= String.format("%1.3f",pvalue[0]);
+              DOFDisplay.setText(Double.toString(df));
+              pValueDisplay.setText(_pval);
+              
+                     H0=jH0EdFeild.getText();
+                      
+                      H1=jH1EdFeild.getText();
+                     
+                 NULLTextDisplay.setText(H0);
+               H1Displayfeild.setText(H1);
+               alphaDisplay.setText(Double.toString(alpha));
+         
+              jChiValueDisplay.setText(_chi);
+               jCriticalDisplay.setText(CV);
+               
+                String  c1=String.format(" <= %5.3f",critical_value[0]);
+         String  c2=String.format(" >= %5.3f",critical_value[0]);
+         String  c3=String.format(" = %5.3f",critical_value[0]);
+      String  lessthan= String.format("  %2.3f <= %2.3f  we  can  accept  the Null Hypothesis",  chisquareVal,critical_value[0]);
+     String  GTthan= String.format("  %2.3f >= %2.3f  we  can  accept  the Null Hypothesis",  chisquareVal,critical_value[0]);     
+            String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can  reject  the Null Hypothesis",chisquareVal,critical_value[0]);
+       String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",chisquareVal,critical_value[0]);
+           
+               if(critical_value[0]<=  chisquareVal)
+               kiCriteria.setText(c1);
+                  if(critical_value[0]>=  chisquareVal)
+               kiCriteria.setText(c2);
+                 if(critical_value[0]==  chisquareVal)
+               kiCriteria.setText(c3);
+               
+              if(critical_value[0]<=  chisquareVal)
+               resultDisplay.setText(lessthan);
+                  if(critical_value[0]>=  chisquareVal)
+               resultDisplay.setText(GTthan);
+                 if(critical_value[0]==  chisquareVal)
+               resultDisplay.setText(c3);
+              }
+           }
         
         
        if(tTestPane.isShowing()  & t_Test)
@@ -9762,7 +9698,7 @@ Remove(3);
              double data[]=  new  double [1000];
            
                double  sdev,mu,Ybar;
-                              
+                                    
    try{
        for(int i=0;  i<=rows;i++)
     {
@@ -9862,8 +9798,6 @@ Remove(3);
                      
                       tTestH1.setText(H1); 
 
-                      HATestSign.setText(ATO);
-                      H0TestSign.setText(NullOption);
                     
                       
                       String  c1=String.format(" <= %5.3f",critical_value[2]);
@@ -10638,7 +10572,141 @@ Remove(3);
      
      
      
+     if(OneSampleVariancePane.isShowing()  &&  one_sample)
+           {
+                                System.out.print("working");
+                 System.out.print("working");
+
+               double  var,num,beta= 0,LBcv=1,UBcv=1;
+                 double sample[] = new double[1000];
+                 int sample_count=0;
+                 double  [] variance_t= new double [1000]; 
+                 
+                try{
+       for(int i=0;  i<=10;++i)
+             {if (StatsTable.getValueAt(i,0)  != null)
+      {
+       variance_t[i]= Double.parseDouble(StatsTable.getValueAt(i, 1).toString() ); 
+      ++sample_count;
+      } }  
+      }catch( Exception e)   {simplelogger(e);
+      //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info."); 
+      
+      }
+        
+            
+                    sample = Arrays.copyOf(variance_t,sample_count); 
+          
+                SummaryStatistics Stats = new SummaryStatistics();
+                       for (int i = 0; i < sample.length; i++) 
+                       {Stats.addValue(sample[i]);
+                       }    
+                        n=sample.length;
+                       num= (n-1)*Stats.getVariance();
+                       var= num/Stats.getStandardDeviation(); 
+                       
+                  
+            if(  jTestType.getSelectedIndex() ==0 )
+            {
+      
+           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n-1,1-alpha);
+                    critical_value[4]=chisquared.inverseCumulativeProbability(1-alpha);
+                    pvalue[4]= 1-chisquared.cumulativeProbability(critical_value[4]);
+           
+           }
+            
+              if(  jTestType.getSelectedIndex() ==1 )
+            {
+         
+           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n-1,alpha);
+                    critical_value[4]=chisquared.inverseCumulativeProbability(alpha);
+                    pvalue[4]= 1-chisquared.cumulativeProbability(critical_value[4]);
+           
+           }
+            
+            
+           
+         size.setText(Integer.toString(n));
    
+             
+               if(  jTestType.getSelectedIndex() ==2)
+             {
+                  NullTestOption="==";
+                  ATO="<>";
+              beta=1-(alpha/2);
+             ChiSquaredDistribution LB =  new ChiSquaredDistribution(n-1,alpha/2);
+             ChiSquaredDistribution UB =  new ChiSquaredDistribution(n-1,beta);
+              LBcv = ((n-1)*Stats.getVariance())/LB.inverseCumulativeProbability(alpha/2);
+              UBcv =  ((n-1)*Stats.getVariance())/UB.inverseCumulativeProbability(beta);
+             
+             if(var <LBcv  ||var> UBcv)
+             {critical_value[4]=LBcv;
+              pvalue[4]=1 -LB.cumulativeProbability(critical_value[4]);    
+             }else
+                {critical_value[4]=UBcv;
+              pvalue[4]=1 -UB.cumulativeProbability(critical_value[4]);    
+             } 
+                 
+                 
+              
+             }
+                
+                H0=jH0EdFeild.getText();
+                  H1=jH1EdFeild.getText();
+                var_H0.setText(H0);
+                var_H1.setText(H1);
+                         var_opt1.setText(NullTestOption);
+             var_alt.setText(ATO);
+               _var=String.format("%2.3f",var);
+              String _cv= String.format("%2.3f",critical_value[4]);
+                  var_ts.setText(_var);
+                  var_cv.setText(_cv);
+                  var_alpha.setText(Double.toString(alpha));
+                  String _pv = String.format("%2.3f",pvalue[4]);
+                  var_p.setText(_pv);
+           
+       String  varcrit1=String.format("%2.3f, %d)<=%2.3f",1-alpha/2,n-1,var);    
+        String  varcrit2=String.format("%2.3f, %d)>=%2.3f",alpha,n-1,var);   
+       String  varcrit3=String.format("%2.3f, %d)<>%2.3f",1-alpha,n-1,var);   
+         
+     String  lessthan= String.format("  Since    %2.3f <= %2.3f  we  can  accept  the Null Hypothesis",var,critical_value[4]);
+     String  GTthan= String.format("  Since    %2.3f >= %2.3f  we  can  accept  the Null Hypothesis",var,critical_value[4]);
+       String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can  reject  the Null Hypothesis",var,critical_value[4]);
+       String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
+     String  NotEq = String.format("  Since    %2.3f<> %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
+     
+       
+       if  (var<=critical_value[4])
+        {
+         statement.setText(lessthan);
+         varCrit.setText(varcrit1);
+        }
+        else
+     {
+         statement.setText(ha_lessthan);
+          varCrit.setText(varcrit2);
+     }
+     
+     
+     if(var>= critical_value[4])
+     {
+        statement.setText(GTthan); 
+       varCrit.setText(varcrit3); 
+     }
+     else
+        statement.setText(ha_GTthan); 
+     
+     
+    if( jTestType.getSelectedIndex() ==2)
+    {
+    String j2tailstatement = String.format("Since %2.3f <=%2.3f<= %2.3f, we cannot reject the Null Hypothesis",LBcv,var,UBcv);
+    statement.setText(j2tailstatement);
+    }
+    else
+       statement.setText(NotEq); 
+           
+   
+           } 
      
      
      if(Paired_tTestPanel.hasFocus() && paired_t==true)
