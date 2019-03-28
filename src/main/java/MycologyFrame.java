@@ -9586,7 +9586,7 @@ Remove(3);
      String  NotEq = String.format("  Since    %2.3f<> %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
      
        
-       if  (var<=critical_value[4])
+       if  (var< critical_value[4] && jTestType.getSelectedIndex() ==0  )
         {
          statement.setText(lessthan);
          varCrit.setText(varcrit1);
@@ -9598,22 +9598,22 @@ Remove(3);
      }
      
      
-     if(var>= critical_value[4])
-     {
-        statement.setText(GTthan); 
-       varCrit.setText(varcrit3); 
-     }
-     else
-        statement.setText(ha_GTthan); 
+   // if(var> critical_value[4])
+    // {
+    //   statement.setText(GTthan); 
+     //  varCrit.setText(varcrit2); 
+    // }
+    // else
+    //   statement.setText(ha_GTthan); 
      
      
-    if( jTestType.getSelectedIndex() ==2)
-    {
-    String j2tailstatement = String.format("Since %2.3f <=%2.3f<= %2.3f, we cannot reject the Null Hypothesis",LBcv,var,UBcv);
-    statement.setText(j2tailstatement);
-    }
-    else
-       statement.setText(NotEq); 
+ //   if( jTestType.getSelectedIndex() ==2)
+   // {
+    //String j2tailstatement = String.format("Since %2.3f <=%2.3f<= %2.3f, we cannot reject the Null Hypothesis",LBcv,var,UBcv);
+   // statement.setText(j2tailstatement);
+   // }
+  //  else
+    //   statement.setText(NotEq); 
            
    
            } 
