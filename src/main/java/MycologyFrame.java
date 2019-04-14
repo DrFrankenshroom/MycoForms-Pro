@@ -3,7 +3,7 @@ import   org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 import org.apache.commons.math3.distribution.ChiSquaredDistribution;
 import org.apache.commons.math3.stat.inference.MannWhitneyUTest;
 import org.apache.commons.math3.stat.ranking.NaNStrategy;
-import  org.apache.commons.math3.stat.ranking.NaturalRanking;
+import org.apache.commons.math3.stat.ranking.NaturalRanking;
 import org.apache.commons.math3.stat.ranking.TiesStrategy;
 import org.apache.commons.math3.distribution.TDistribution;
  import org.apache.commons.math3.distribution.FDistribution;
@@ -6055,6 +6055,8 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
 
         var_cv.setEditable(false);
 
+        var_p.setEditable(false);
+
         var_H0.setEditable(false);
 
         var_H1.setEditable(false);
@@ -6333,70 +6335,77 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
             .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Paired_tTestPanelLayout.createSequentialGroup()
-                            .addComponent(jLabel149, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                            .addComponent(jLabel152, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(pairedTCrit))
-                                .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                                    .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(NullOpt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel154)
-                                            .addComponent(pairedT_alt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(pairedTValue, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(pairedT_CV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel185, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel153, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jLabel227, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE))
-                        .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                            .addGap(127, 127, 127)
-                            .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel148, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(pairedT_H0, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                                .addComponent(pairedT_H1))
-                            .addGap(54, 54, 54)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Paired_tTestPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel149, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel152, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Paired_tTestPanelLayout.createSequentialGroup()
+                                .addComponent(pairedTValue, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Paired_tTestPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel154)
+                                .addGap(24, 24, 24)))
+                        .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pairedT_CV, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel153, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                        .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel148, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(pairedT_H0, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                                    .addComponent(pairedT_H1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel184, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel184, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(181, 181, 181)))
-                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                                        .addComponent(pairedT_df, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(ALOSPairedt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                                        .addGap(240, 240, 240)
+                                        .addComponent(jLabel134)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                                .addComponent(pairedT_df, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
-                                .addComponent(ALOSPairedt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(NullOpt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                                .addGap(240, 240, 240)
-                                .addComponent(jLabel134)))
-                        .addGap(149, 149, 149)))
+                                .addComponent(pairedT_alt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel185, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
                         .addComponent(jLabel155, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Paired_tTestPanelLayout.createSequentialGroup()
                         .addComponent(pairedT_pval, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(32, 32, 32))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Paired_tTestPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(paired_t_result, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107))
             .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
                 .addGap(265, 265, 265)
-                .addComponent(jLabel231, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel227, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel231, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pairedTCrit)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         Paired_tTestPanelLayout.setVerticalGroup(
@@ -6405,13 +6414,12 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addGap(45, 45, 45)
                 .addComponent(jLabel134)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NullOpt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pairedT_H0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pairedT_H0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NullOpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel185, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6433,16 +6441,13 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                     .addComponent(pairedT_CV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pairedT_pval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pairedT_df, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel227, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pairedTCrit)
-                        .addGap(32, 32, 32))
-                    .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pairedTCrit))
+                .addGap(0, 23, Short.MAX_VALUE)
                 .addComponent(jLabel231, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(paired_t_result, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7091,6 +7096,11 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jTestType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<=", ">=", "=" }));
         jTestType.setSelectedIndex(1);
         jTestType.setBorder(javax.swing.BorderFactory.createTitledBorder("Test option"));
+        jTestType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTestTypeActionPerformed(evt);
+            }
+        });
 
         jFTestRadioBut.setText("F  Test-2  Sample  Test");
         jFTestRadioBut.addActionListener(new java.awt.event.ActionListener() {
@@ -7351,11 +7361,10 @@ Remove(3);
  if(t_Test==true   || one_sample==true ||wilcoxan==true)
  {
      Standard =  StatsTable.getColumnCount();
- Remove(6);
- for(int count=0;count<=1;++count)
- { Remove(2);
-   Remove(1);
- }
+  Remove(6);
+ Remove(3);
+  Remove(2);
+  
 
  }
  
@@ -9480,10 +9489,121 @@ Remove(3);
        int  rows=StatsTable.getRowCount();
          int df=1;
 
+            
+         if(Paired_tTestPanel.isShowing())
+         {
+             double t0[] =new double [1000];
+         double t1[]= new double[1000];
+        
+         boolean pairedTtest;
+     double sample1[]= new  double[1000];
+        double sample2[]= new double[1000];
+      
+       
+        try{
+       for(int i=0;  i<=rows;++i)
+    {if (StatsTable.getValueAt(i,0) != null)
+      {t0[i]=Double.parseDouble(StatsTable.getValueAt(i, 1).toString() );
+       t1[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
+       dof++;
+      }
+    
+     }
+       
+      }catch( Exception e)   {simplelogger(e);}
+        
+        
+       sample1 = Arrays.copyOf(t0,dof) ;
+          sample2  = Arrays.copyOf(t1,dof); 
+           
+          SummaryStatistics Stats = new SummaryStatistics();
+           SummaryStatistics Stats2 = new SummaryStatistics();
+           
+                       for (int i = 0; i < sample1.length; i++) 
+                       {Stats.addValue(sample1[i]);
+                       Stats2.addValue(sample1[i]);
+                       
+                       }
+          
+                 TDistribution t = new TDistribution(dof);
+                   paired_Tstat= TestUtils.pairedT(sample1, sample2);             
+                      
+        String  ans = String.format("%1.3f",paired_Tstat);
+         pairedTValue.setText(ans);
+        
+               
+       H0=jH0EdFeild.getText();
+       H1=jH1EdFeild.getText();
+     pairedT_H0.setText(H0);
+     pairedT_H1.setText(H1);     
+    ALOSPairedt.setText(Double.toString(alpha));
+   pairedT_df.setText(Integer.toString(dof));
+    pvalue[3]=TestUtils.pairedTTest(sample1, sample2);
+     String  _pval= String.format("%1.3f",pvalue[3]);
+     pairedT_pval.setText(_pval);
+           
+       if(  jTestType.getSelectedIndex() ==2  )
+   {
+       critical_value[3] =2*t.inverseCumulativeProbability(1- (2*alpha/2));
+       pairedT_alt.setText("!");
+       NullOpt.setText("=");
+   }
+   
+  if(  jTestType.getSelectedIndex() ==0)
+  {
+      critical_value[3]= t.inverseCumulativeProbability(1- alpha);
+      pairedT_alt.setText("<");
+       NullOpt.setText("<=");
+  }
+ 
+   if( jTestType.getSelectedIndex() ==1 )
+   {
+       critical_value[3] = t.inverseCumulativeProbability(alpha);
+   pairedT_alt.setText(">");
+       NullOpt.setText(">=");
+   }
+ 
+     
+     String   CV = String.format("%1.3f",critical_value[3]);
+     pairedT_CV.setText(CV);
+    
+     
+                 
+         String  c1=String.format(" W<= %5.3f",critical_value[3]);
+         String  c2=String.format("W >= %5.3f",critical_value[3]);
+         String  c3=String.format(" W= %5.3f",critical_value[3]);
+         String  lessthan= String.format("  Since    %2.3f <= %2.3f  we  can  accept  the Null Hypothesis",paired_Tstat,critical_value[3]);
+     String  GTthan= String.format("  Since    %2.3f >= %2.3f  we  can't  accept  the Null Hypothesis",paired_Tstat,critical_value[3]);
+       String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can't  reject  the Null Hypothesis",paired_Tstat,critical_value[3]);
+       String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",paired_Tstat,critical_value[3]);
+          if  (paired_Tstat<=critical_value[3])
+         paired_t_result.setText(lessthan);
+     if(paired_Tstat> critical_value[3]);
+         paired_t_result.setText(ha_lessthan);
+     if(paired_Tstat>= critical_value[3])
+            paired_t_result.setText(GTthan); 
+      if(paired_Tstat< critical_value[3])
+              paired_t_result.setText(ha_GTthan);  
+              
+               if(critical_value[3]<=paired_Tstat)
+               pairedTCrit.setText(c1);
+                  if(critical_value[3]>=paired_Tstat)
+               pairedTCrit.setText(c2);
+                 if(critical_value[3]==paired_Tstat)
+                 pairedTCrit.setText(c3); 
+       
+               }
+         
+         
+         
+         
+         
+         
+         
+       
          if(OneSampleVariancePane.isShowing()  &&  one_sample)
            {
-                                
-
+                               
                double  var,num,beta= 0,LBcv=1,UBcv=1;
                  double sample[] = new double[1000];
                  int sample_count=0;
@@ -9500,8 +9620,7 @@ Remove(3);
       //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info."); 
       
       }
-        
-            
+           
                     sample = Arrays.copyOf(variance_t,sample_count); 
           
                 SummaryStatistics Stats = new SummaryStatistics();
@@ -9515,8 +9634,8 @@ Remove(3);
                   
             if(  jTestType.getSelectedIndex() ==0 )
             {
-             NullTestOption="<";
-                  ATO=">=";
+           NullTestOption="<=";
+           ATO=">";
            ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n-1,1-alpha);
                     critical_value[4]=chisquared.inverseCumulativeProbability(1-alpha);
                     pvalue[4]= 1-chisquared.cumulativeProbability(critical_value[4]);
@@ -9525,8 +9644,8 @@ Remove(3);
             
               if(  jTestType.getSelectedIndex() ==1 )
             {
-          NullTestOption=">";
-                  ATO="<=";
+          NullTestOption=">=";
+           ATO="<";
            ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n-1,alpha);
                     critical_value[4]=chisquared.inverseCumulativeProbability(alpha);
                     pvalue[4]= 1-chisquared.cumulativeProbability(critical_value[4]);
@@ -9537,18 +9656,18 @@ Remove(3);
            
          size.setText(Integer.toString(n));
    
-             
+            
                if(  jTestType.getSelectedIndex() ==2)
              {
-                  NullTestOption="==";
-                  ATO="<>";
+                NullTestOption="=";
+           ATO="!="; 
               beta=1-(alpha/2);
              ChiSquaredDistribution LB =  new ChiSquaredDistribution(n-1,alpha/2);
              ChiSquaredDistribution UB =  new ChiSquaredDistribution(n-1,beta);
-              LBcv = ((n-1)*Stats.getVariance())/LB.inverseCumulativeProbability(alpha/2);
-              UBcv =  ((n-1)*Stats.getVariance())/UB.inverseCumulativeProbability(beta);
+              LBcv = LB.inverseCumulativeProbability(alpha/2);
+              UBcv = UB.inverseCumulativeProbability(beta);
              
-             if(var <LBcv  ||var> UBcv)
+             if(var <=LBcv    &&  var<= UBcv)
              {critical_value[4]=LBcv;
               pvalue[4]=1 -LB.cumulativeProbability(critical_value[4]);    
              }else
@@ -9584,38 +9703,49 @@ Remove(3);
        String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can  reject  the Null Hypothesis",var,critical_value[4]);
        String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
      String  NotEq = String.format("  Since    %2.3f<> %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
-     
+      String Equal = String.format("  Since    %2.3f<= %2.3f<=  %2.3f   we  can accept he Null Hypothesis",LBcv,var,UBcv);
+      
+       if  (var>= critical_value[4] && jTestType.getSelectedIndex() ==1  )
+        {
+        
+         statement.setText(GTthan);
+         varCrit.setText(varcrit2);
+        }
+      
        
-       if  (var< critical_value[4] && jTestType.getSelectedIndex() ==0  )
+       if  (var<critical_value[4]  && jTestType.getSelectedIndex() ==1  )
+        {
+        
+         statement.setText(ha_GTthan);
+         varCrit.setText(varcrit2);
+        }
+       
+       
+    if(var <= critical_value[4] && jTestType.getSelectedIndex() ==0  )
         {
          statement.setText(lessthan);
          varCrit.setText(varcrit1);
         }
-        else
-     {
+      
+       if  (var <= critical_value[4]&& jTestType.getSelectedIndex() ==0 )
+        {
+        
          statement.setText(ha_lessthan);
-          varCrit.setText(varcrit2);
+         varCrit.setText(varcrit2);
+        } 
+       
+      
+    
+     if(LBcv<=var && var<=UBcv )
+     {
+         statement.setText(Equal);
+         varCrit.setText(varcrit3);
      }
-     
-     
-   // if(var> critical_value[4])
-    // {
-    //   statement.setText(GTthan); 
-     //  varCrit.setText(varcrit2); 
-    // }
-    // else
-    //   statement.setText(ha_GTthan); 
-     
-     
- //   if( jTestType.getSelectedIndex() ==2)
-   // {
-    //String j2tailstatement = String.format("Since %2.3f <=%2.3f<= %2.3f, we cannot reject the Null Hypothesis",LBcv,var,UBcv);
-   // statement.setText(j2tailstatement);
-   // }
-  //  else
-    //   statement.setText(NotEq); 
-           
-   
+     else{
+         
+         statement.setText(NotEq);
+         varCrit.setText(varcrit3);
+     }
            } 
                       
      
@@ -9631,8 +9761,9 @@ Remove(3);
        try{
        for(int i=0;  i<=rows;++i)
     {if (StatsTable.getValueAt(i,0) != null)
-      {data[i]=Long.parseLong(StatsTable.getValueAt(i, 2).toString() );
-         data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
+      {
+         data[i]=Long.parseLong(StatsTable.getValueAt(i, 1).toString() );
+         data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
       df++;
        
       }
@@ -9982,15 +10113,15 @@ Remove(3);
           try{
        for(int i=0;  i<=4;++i)
     {if (StatsTable != null)
-      {g1[i]=Long.parseLong(StatsTable.getValueAt(i, 2).toString() );
-       g2[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
+      {g1[i]=Long.parseLong(StatsTable.getValueAt(i, 1).toString() );
+       g2[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
      df++;
       }
     
      }
        
       }catch( Exception e)   {simplelogger(e);
-      JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
+   //   JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
       }
           
     observed= Arrays.copyOf(g1,df-1);
@@ -10577,248 +10708,8 @@ Remove(3);
      
      
      
-     if(OneSampleVariancePane.isShowing()  &&  one_sample)
-           {
-                                System.out.print("working");
-                 System.out.print("working");
-
-               double  var,num,beta= 0,LBcv=1,UBcv=1;
-                 double sample[] = new double[1000];
-                 int sample_count=0;
-                 double  [] variance_t= new double [1000]; 
-                 
-                try{
-       for(int i=0;  i<=10;++i)
-             {if (StatsTable.getValueAt(i,0)  != null)
-      {
-       variance_t[i]= Double.parseDouble(StatsTable.getValueAt(i, 1).toString() ); 
-      ++sample_count;
-      } }  
-      }catch( Exception e)   {simplelogger(e);
-      //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info."); 
-      
-      }
-        
-            
-                    sample = Arrays.copyOf(variance_t,sample_count); 
-          
-                SummaryStatistics Stats = new SummaryStatistics();
-                       for (int i = 0; i < sample.length; i++) 
-                       {Stats.addValue(sample[i]);
-                       }    
-                        n=sample.length;
-                       num= (n-1)*Stats.getVariance();
-                       var= num/Stats.getStandardDeviation(); 
-                       
-                  
-            if(  jTestType.getSelectedIndex() ==0 )
-            {
-      
-           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n-1,1-alpha);
-                    critical_value[4]=chisquared.inverseCumulativeProbability(1-alpha);
-                    pvalue[4]= 1-chisquared.cumulativeProbability(critical_value[4]);
-           
-           }
-            
-              if(  jTestType.getSelectedIndex() ==1 )
-            {
-         
-           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n-1,alpha);
-                    critical_value[4]=chisquared.inverseCumulativeProbability(alpha);
-                    pvalue[4]= 1-chisquared.cumulativeProbability(critical_value[4]);
-           
-           }
-            
-            
-           
-         size.setText(Integer.toString(n));
-   
-             
-               if(  jTestType.getSelectedIndex() ==2)
-             {
-                  NullTestOption="==";
-                  ATO="<>";
-              beta=1-(alpha/2);
-             ChiSquaredDistribution LB =  new ChiSquaredDistribution(n-1,alpha/2);
-             ChiSquaredDistribution UB =  new ChiSquaredDistribution(n-1,beta);
-              LBcv = ((n-1)*Stats.getVariance())/LB.inverseCumulativeProbability(alpha/2);
-              UBcv =  ((n-1)*Stats.getVariance())/UB.inverseCumulativeProbability(beta);
-             
-             if(var <LBcv  ||var> UBcv)
-             {critical_value[4]=LBcv;
-              pvalue[4]=1 -LB.cumulativeProbability(critical_value[4]);    
-             }else
-                {critical_value[4]=UBcv;
-              pvalue[4]=1 -UB.cumulativeProbability(critical_value[4]);    
-             } 
-                 
-                 
-              
-             }
-                
-                H0=jH0EdFeild.getText();
-                  H1=jH1EdFeild.getText();
-                var_H0.setText(H0);
-                var_H1.setText(H1);
-                         var_opt1.setText(NullTestOption);
-             var_alt.setText(ATO);
-               _var=String.format("%2.3f",var);
-              String _cv= String.format("%2.3f",critical_value[4]);
-                  var_alos.setText(_var);
-                  var_cv.setText(_cv);
-                  var_alpha.setText(Double.toString(alpha));
-                  String _pv = String.format("%2.3f",pvalue[4]);
-                  var_p.setText(_pv);
-           
-       String  varcrit1=String.format("%2.3f, %d)<=%2.3f",1-alpha/2,n-1,var);    
-        String  varcrit2=String.format("%2.3f, %d)>=%2.3f",alpha,n-1,var);   
-       String  varcrit3=String.format("%2.3f, %d)<>%2.3f",1-alpha,n-1,var);   
-         
-     String  lessthan= String.format("  Since    %2.3f <= %2.3f  we  can  accept  the Null Hypothesis",var,critical_value[4]);
-     String  GTthan= String.format("  Since    %2.3f >= %2.3f  we  can  accept  the Null Hypothesis",var,critical_value[4]);
-       String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can  reject  the Null Hypothesis",var,critical_value[4]);
-       String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
-     String  NotEq = String.format("  Since    %2.3f<> %2.3f   we  can  reject  the Null Hypothesis",var,critical_value[4]);
-     
-       
-       if  (var<=critical_value[4])
-        {
-         statement.setText(lessthan);
-         varCrit.setText(varcrit1);
-        }
-        else
-     {
-         statement.setText(ha_lessthan);
-          varCrit.setText(varcrit2);
-     }
-     
-     
-     if(var>= critical_value[4])
-     {
-        statement.setText(GTthan); 
-       varCrit.setText(varcrit3); 
-     }
-     else
-        statement.setText(ha_GTthan); 
-     
-     
-    if( jTestType.getSelectedIndex() ==2)
-    {
-    String j2tailstatement = String.format("Since %2.3f <=%2.3f<= %2.3f, we cannot reject the Null Hypothesis",LBcv,var,UBcv);
-    statement.setText(j2tailstatement);
-    }
-    else
-       statement.setText(NotEq); 
-           
-   
-           } 
-     
-     
-     if(Paired_tTestPanel.hasFocus() && paired_t==true)
-     {  double t0[] =new double [1000];
-         double t1[]= new double[1000];
-         
-         boolean pairedTtest;
-     double sample1[]= new  double[1000];
-        double sample2[]= new double[1000];
-               
-                 System.out.print("working");
-       try{
-       for(int i=0;  i<=rows;++i)
-    {if (StatsTable.getValueAt(i,0) != null)
-      {t0[i]=Double.parseDouble(StatsTable.getValueAt(i, 1).toString() );
-       t1[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
-       dof++;
-      }
     
-     }
-       
-      }catch( Exception e)   {simplelogger(e);}
-         sample1 = Arrays.copyOf(t0,dof) ;
-          sample2  = Arrays.copyOf(t1,dof);         
-                 
-              
-         SummaryStatistics Stats = new SummaryStatistics();
-                       for (int i = 0; i < sample1.length; i++) 
-                       {Stats.addValue(sample1[i]);
-                       }
-          
-                       
-                SummaryStatistics Stats2 = new SummaryStatistics();
-                       for (int i = 0; i < sample2.length; i++) 
-                       {
-                        Stats2.addValue(sample2[i]);}
-                  TDistribution t = new TDistribution(dof);
-                  
-       H0=jH0EdFeild.getText();
-       H1=jH1EdFeild.getText();
-     pairedT_H0.setText(H0);
-     pairedT_H1.setText(H1);     
-     paired_Tstat= TestUtils.pairedT(sample1, sample2);
-      String  ans = String.format("%1.3f",paired_Tstat);
-   pairedTValue.setText(ans);
-        
-             ALOSPairedt.setText(Double.toString(alpha));
-           pairedT_df.setText(Integer.toString(dof));
-    pvalue[3]=TestUtils.pairedTTest(sample1, sample2);
-     String  _pval= String.format("%1.3f",pvalue[3]);
-     pairedT_pval.setText(_pval);
-     
- 
-   
-   if(  jTestType.getSelectedIndex() ==2  )
-   {
-       critical_value[3] =2*t.inverseCumulativeProbability(1- (2*alpha/2));
-       ATO="!=";
-   }
-   
-  if(  jTestType.getSelectedIndex() ==0)
-  {
-      critical_value[3]= t.inverseCumulativeProbability(1- alpha);
-      pairedT_alt.setText("<");
-       NullOpt.setText("<=");
-  }
- 
-   if( jTestType.getSelectedIndex() ==1 )
-   {
-       critical_value[3] = t.inverseCumulativeProbability(alpha);
-   pairedT_alt.setText(">");
-       NullOpt.setText(">=");
-   }
- 
-     
-     String   CV = String.format("%1.3f",critical_value[3]);
-     pairedT_CV.setText(CV);
-    
-      NullOpt.setText(NullTestOption);
-     pairedT_alt.setText(ATO);
-                 
-         String  c1=String.format(" W<= %5.3f",critical_value[3]);
-         String  c2=String.format("W >= %5.3f",critical_value[3]);
-         String  c3=String.format(" W= %5.3f",critical_value[3]);
-         String  lessthan= String.format("  Since    %2.3f <= %2.3f  we  can  accept  the Null Hypothesis",paired_Tstat,critical_value[3]);
-     String  GTthan= String.format("  Since    %2.3f >= %2.3f  we  can't  accept  the Null Hypothesis",paired_Tstat,critical_value[3]);
-       String  ha_lessthan= String.format("  Since    %2.3f>  %2.3f  we  can't  reject  the Null Hypothesis",paired_Tstat,critical_value[3]);
-       String  ha_GTthan= String.format("  Since    %2.3f< %2.3f   we  can  reject  the Null Hypothesis",paired_Tstat,critical_value[3]);
-          
-
-     if  (paired_Tstat<=critical_value[3])
-         paired_t_result.setText(lessthan);
-     if(paired_Tstat> critical_value[3]);
-         paired_t_result.setText(ha_lessthan);
-     if(paired_Tstat>= critical_value[3])
-            paired_t_result.setText(GTthan); 
-      if(paired_Tstat< critical_value[3])
-              paired_t_result.setText(ha_GTthan);  
-              
-               if(critical_value[3]<=paired_Tstat)
-               pairedTCrit.setText(c1);
-                  if(critical_value[3]>=paired_Tstat)
-               pairedTCrit.setText(c2);
-                 if(critical_value[3]==paired_Tstat)
-                 pairedTCrit.setText(c3);
-     
-     }        
+         
      }
      
    }
@@ -11308,6 +11199,7 @@ Remove(3);
         {
        
             pairedT_H0.setText(null);
+            
             pairedT_H1.setText(null);
             pairedTValue.setText(null);
             ALOSPairedt.setText(null);
@@ -11413,7 +11305,7 @@ for(int i=0;i<rows;i++)
               
              }
              
-             if((jALOSCB.getSelectedIndex()==1 ||jALOSCB.getSelectedIndex()==3||jALOSCB.getSelectedIndex()==4)  )
+             if((jALOSCB.getSelectedIndex()==1 ||jALOSCB.getSelectedIndex()==5||jALOSCB.getSelectedIndex()==4)  )
                      { alpha= Double.parseDouble(jALOSCBObj.toString());
                       alphaswitch=true ;
               
@@ -11449,6 +11341,10 @@ for(int i=0;i<rows;i++)
         StatsTable.invalidate();
         StatsTable.getModel();
     }//GEN-LAST:event_StatsTableFocusLost
+
+    private void jTestTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTestTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTestTypeActionPerformed
 
     
     /**
