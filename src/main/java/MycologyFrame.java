@@ -10103,29 +10103,32 @@ Remove(3);
     
     
      if(GtestPane.isShowing() &&  Gtest)
-     {
+     {   int  n=1 ;
          long g1[]=new long[1000];  
          double g2[]=new double[1000];
-         
-         double [] expected = new  double[1000];
+         String names[]=new String[15];
+          double [] expected = new  double[1000];
          long[] observed = new  long[1000];
          
-          try{
-       for(int i=0;  i<=4;++i)
-    {if (StatsTable != null)
-      {g1[i]=Long.parseLong(StatsTable.getValueAt(i, 1).toString() );
-       g2[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
-     df++;
+      
+         
+         
+         try{
+       for(int i=0;  i<=rows;++i)
+    {if (StatsTable.getValueAt(i,0) != null)
+      {g1[i]= Long.parseLong(StatsTable.getValueAt(i, 2).toString() );
+       g2[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
+       n++;
       }
     
      }
        
-      }catch( Exception e)   {simplelogger(e);
-   //   JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
-      }
-          
-    observed= Arrays.copyOf(g1,df-1);
-    expected  =Arrays.copyOf(g2,df-1);
+      }catch( Exception e)   {simplelogger(e);} 
+         
+         
+    
+    observed= Arrays.copyOf(g1,n-1);
+    expected  =Arrays.copyOf(g2,n-2);
         
          if(observed.length==expected.length)
          {
@@ -10136,7 +10139,7 @@ Remove(3);
          String _gtest=String.format("%5.3f",TestUtils.g(expected, observed));
          Gtestval.setText(_gtest);
          G_alpha.setText(Double.toString(alpha));
-           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(df,alpha);
+           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n,alpha);
              critical_value[8]=chisquared.inverseCumulativeProbability(alpha);
              String gcrit= String.format("%5.3f",critical_value[8]);
              String sol1= String.format("Since G>=%5.3f. We  reject H0",critical_value[8]);
