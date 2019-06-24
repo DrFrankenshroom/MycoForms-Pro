@@ -53,7 +53,9 @@ public class MycologyFrame extends javax.swing.JFrame {
     public static volatile int Standard;
     public static volatile  int TwoSample;
        double [] pvalue = new double [15];
-               double [] critical_value = new double [15];           
+ double [] critical_value = new double [15]; 
+  long [] observed =  new  long [100];
+  double[] expected  = new double[100];
     int  recno =1,dof=1,n=1,df1,df2,y,m;
 String date_format,alphadisplay;
 String  Record,H0,H1;
@@ -599,7 +601,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel228 = new javax.swing.JLabel();
         jLabel229 = new javax.swing.JLabel();
         jLabel230 = new javax.swing.JLabel();
-        GHypo = new javax.swing.JTextField();
+        GHyp0 = new javax.swing.JTextField();
         GAlt = new javax.swing.JTextField();
         G_dof = new javax.swing.JTextField();
         G_alpha = new javax.swing.JTextField();
@@ -4467,19 +4469,12 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         if (StatsTable.getColumnModel().getColumnCount() > 0) {
             StatsTable.getColumnModel().getColumn(0).setResizable(false);
             StatsTable.getColumnModel().getColumn(0).setPreferredWidth(10);
-            StatsTable.getColumnModel().getColumn(0).setHeaderValue("");
             StatsTable.getColumnModel().getColumn(1).setResizable(false);
-            StatsTable.getColumnModel().getColumn(1).setHeaderValue("Treatment");
             StatsTable.getColumnModel().getColumn(2).setResizable(false);
-            StatsTable.getColumnModel().getColumn(2).setHeaderValue("obs");
             StatsTable.getColumnModel().getColumn(3).setResizable(false);
-            StatsTable.getColumnModel().getColumn(3).setHeaderValue("obs");
             StatsTable.getColumnModel().getColumn(4).setResizable(false);
-            StatsTable.getColumnModel().getColumn(4).setHeaderValue(" obs");
             StatsTable.getColumnModel().getColumn(5).setResizable(false);
-            StatsTable.getColumnModel().getColumn(5).setHeaderValue("obs");
             StatsTable.getColumnModel().getColumn(6).setResizable(false);
-            StatsTable.getColumnModel().getColumn(6).setHeaderValue(" obs");
         }
 
         jClearResults.setText("clear  results");
@@ -4829,8 +4824,8 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
         jLabel230.setForeground(new java.awt.Color(2, 0, 0));
         jLabel230.setText("<html> Reject  H<sub>0</sub>  if   G</html>");
 
-        GHypo.setEditable(false);
-        GHypo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        GHyp0.setEditable(false);
+        GHyp0.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         GAlt.setEditable(false);
         GAlt.setText("jTextField6");
@@ -4878,39 +4873,10 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel221)
-                            .addComponent(GHypo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(GHyp0, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel35Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addComponent(gdf, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel226, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(G_dof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(G_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)))
-                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addComponent(F_test_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel225, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addComponent(Gtestval, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
-                                .addComponent(G_crit, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(gpval, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Gpval, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addGap(235, 235, 235)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4921,9 +4887,38 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                                 .addComponent(criteria, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel228, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel35Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(solution, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(solution, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel35Layout.createSequentialGroup()
+                                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel35Layout.createSequentialGroup()
+                                        .addComponent(gdf, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel226, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                    .addGroup(jPanel35Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(G_dof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(G_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(54, 54, 54)))
+                                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel35Layout.createSequentialGroup()
+                                        .addComponent(F_test_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel225, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel35Layout.createSequentialGroup()
+                                        .addComponent(Gtestval, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(63, 63, 63)
+                                        .addComponent(G_crit, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel35Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(gpval, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Gpval, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4933,7 +4928,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel223, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GHypo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GHyp0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel224, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6383,8 +6378,7 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                             .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
                                 .addComponent(pairedT_alt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel185, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jLabel185, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Paired_tTestPanelLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
@@ -6414,12 +6408,13 @@ jCoralFungusPhotoNoEdFeild.addKeyListener(new   KeyAdapter()
                 .addGap(45, 45, 45)
                 .addComponent(jLabel134)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pairedT_H0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NullOpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pairedT_H0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NullOpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Paired_tTestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel185, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7360,12 +7355,15 @@ Remove(3);
   
  if(t_Test==true   || one_sample==true ||wilcoxan==true)
  {
-     Standard =  StatsTable.getColumnCount();
+       Standard =  StatsTable.getColumnCount();
+      
   Remove(6);
- Remove(3);
   Remove(2);
+  Remove(1);
+ Remove(3);
+ Remove(1);
   
-
+  
  }
  
  if(TwoSampleT==true    ||  Ftest==true   || paired_t==true|| U_Test==true)
@@ -9620,7 +9618,8 @@ Remove(3);
       //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info."); 
       
       }
-           
+         
+         
                     sample = Arrays.copyOf(variance_t,sample_count); 
           
                 SummaryStatistics Stats = new SummaryStatistics();
@@ -9752,20 +9751,25 @@ Remove(3);
         
         if(ChiSquarePane.isShowing()  &&  chi_squared)
            {   
-                 System.out.print("working"); 
-         long [] observed =  new long[100];
-         double [] expected  = new double[100];
+                
+         long [] observed =  new  long [100];
+         double[] expected  = new double[100];
+          String[] treatment ;
+          treatment=new String[20];
          long data[]  = new long[100];
          double data1[]  = new double[100];
-       
+         double  temp[]= new  double[100];
        try{
        for(int i=0;  i<=rows;++i)
+           
     {if (StatsTable.getValueAt(i,0) != null)
       {
-         data[i]=Long.parseLong(StatsTable.getValueAt(i, 1).toString() );
-         data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
-      df++;
+         temp[i]=Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
        
+      data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
+     treatment[i]=StatsTable.getValueAt(i, 1).toString();
+     df=df+1;
+     
       }
     
      }
@@ -9774,11 +9778,17 @@ Remove(3);
             //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
           simplelogger(e);}
        
+      for(int  i=0; i<10;i++)
+          data[i]=(int)temp[i];
+  
+      
+   
+      expected = Arrays.copyOf(data1,df-1);
+  observed  = Arrays.copyOf(data,df-1);
      
   
-      expected = Arrays.copyOf(data1,df-1);
-  observed  = Arrays.copyOf(data,df-1) ;
-     
+ System.out.println(Arrays.toString(observed));
+  
              if(expected.length==observed.length)
               {    
              ChiSquaredDistribution  chi  =  new ChiSquaredDistribution(df,alpha) ;
@@ -9986,7 +9996,7 @@ Remove(3);
         if (StatsTable != null)
       {data[i]=Double.parseDouble(StatsTable.getValueAt(i, 1).toString() );
        data1[i]= Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
-       
+    
        if( Double.parseDouble(StatsTable.getValueAt(i, 1).toString() ) !=0 )
        {n1++;
        n2++;}
@@ -10101,88 +10111,101 @@ Remove(3);
                                                 
     }                    
     
+    //if(GtestPane.isShowing() &&  Gtest &&(alpha !=0.025||  alpha!=.05  ||alpha !=0.01) )
+      //  JOptionPane.showMessageDialog(null,"G test needs alpha =0.025,0.05 or 0.01 to run");
     
-     if(GtestPane.isShowing() &&  Gtest)
-     {   int  n=1 ;
-         long g1[]=new long[1000];  
-         double g2[]=new double[1000];
-         String names[]=new String[15];
-          double [] expected = new  double[1000];
-         long[] observed = new  long[1000];
+     if(GtestPane.isShowing() )
+     {    
+          String[] treatment ;
+         int  i=0;
+          treatment=new String[20];
+                        
+        double g[]  = new double[100];
+         long g1[]  = new long[100];
+         double  temp[]= new  double[10];
+         double  gTest,dof;
          
-      
-         
-         
-         try{
-       for(int i=0;  i<=rows;++i)
-    {if (StatsTable.getValueAt(i,0) != null)
-      {g1[i]= Long.parseLong(StatsTable.getValueAt(i, 2).toString() );
-       g2[i]= Double.parseDouble(StatsTable.getValueAt(i, 3).toString() );
-       n++;
-      }
-    
-     }
+                try{
+       do{
+          
+         g[i]=Double.parseDouble(StatsTable.getValueAt(i, 2).toString() );
+      temp[i] = Double.parseDouble(StatsTable.getValueAt(i, 3).toString());  
+      g1[i]=(int)temp[i];
        
-      }catch( Exception e)   {simplelogger(e);} 
-         
-         
-    
-    observed= Arrays.copyOf(g1,n-1);
-    expected  =Arrays.copyOf(g2,n-2);
-        
-         if(observed.length==expected.length)
-         {
-         pvalue[8]=TestUtils.gTest(expected, observed);
-         String _gpval= String.format("%5.3f",pvalue[8]);
-         gpval.setText(_gpval);
-         G_dof.setText(Integer.toString(df));
-         String _gtest=String.format("%5.3f",TestUtils.g(expected, observed));
-         Gtestval.setText(_gtest);
-         G_alpha.setText(Double.toString(alpha));
-           ChiSquaredDistribution chisquared=  new ChiSquaredDistribution(n,alpha);
-             critical_value[8]=chisquared.inverseCumulativeProbability(alpha);
-             String gcrit= String.format("%5.3f",critical_value[8]);
-             String sol1= String.format("Since G>=%5.3f. We  reject H0",critical_value[8]);
-             String sol2= String.format("Since G<=%5.3f. We  reject H0",critical_value[8]);
-             String sol3= String.format("Since G=%5.3f. We  reject H0",critical_value[8]);
-                 String alt1= String.format("Since G>%5.3f. We  accept H0",critical_value[8]);
-             String alt2= String.format("Since G<%5.3f. We  accep H0",critical_value[8]);
-              H0=jH0EdFeild.getText();
-             GHypo.setText(H0);
-               H0=jH0EdFeild.getText();
-                H1=jH1EdFeild.getText();
-               GAlt.setText(H1);
-               
-             G_crit.setText(gcrit);
-        String  c1=String.format(" <= %5.3f",critical_value[8]);
-         String  c2=String.format(" >= %5.3f",critical_value[8]);
-         String  c3=String.format(" = %5.3f",critical_value[8]);
-         
-            NullOption="<=";
-           if( jTestType.getSelectedIndex() ==0)
-          {
-               criteria.setText(c1);
-               solution.setText(sol1);
-          }
-           NullOption=">=";
-          if(  jTestType.getSelectedIndex() ==1 )
-          {criteria.setText(c2);
-           solution.setText(sol2);
-           }
-           
-           if(TestUtils.g(expected, observed)>critical_value[8])
-               solution.setText(alt1);
-            if(TestUtils.g(expected, observed)<critical_value[8])
-               solution.setText(alt2);
-           
+       i++;
+      }while(i<rows) ;
        
-           if( jTestType.getSelectedIndex()==2 )
-           {
+      }catch(Exception e)   {
+            //JOptionPane.showMessageDialog(null,"Input error: see err.log  for more info.");
+          simplelogger(e);}
+       
+     
+  for(i=0;i<=4;i++)
+      if(temp[i]!=0)
+          df++;
+  
+   observed=Arrays.copyOfRange(g1, 0, df-1);
+     expected = Arrays.copyOf(g,df-1);
+ 
+ System.out.println(alpha);
+ gTest=TestUtils.g(expected, observed); 
+ pvalue[10]=TestUtils.gTest(expected, observed);   
+ TDistribution t = new TDistribution(df-2);
+ double uppertail; 
+ double numerator,ratio,denom;
+ double gCriticalValue=0;
+   String g_reject="",g_accept="";
+ H0=jH0EdFeild.getText();
+  H1=jH1EdFeild.getText();
+  GHyp0.setText(H0);
+  GAlt.setText(H1);
+  
+    if(alpha==0.025||alpha==0.05||alpha==0.01)
+    { 
+    uppertail =1.0-t.cumulativeProbability(alpha/(2*df));
+    numerator=Math.sqrt(uppertail);
+    ratio=(df-1)/Math.sqrt(df);
+     denom= df-2+numerator;
+     gCriticalValue=ratio*Math.sqrt(numerator/denom);
+      g_reject=String.format("Since g= %2.3f >  %2.3f, we can reject the Null Hypothesis",gTest,gCriticalValue);
+      g_accept=String.format("Since g= %2.3f <=  %2.3f,the Null Hypothesis  can't  be rejected",gTest,gCriticalValue);
+     G_alpha.setText(Double.toString(alpha));
+     gpval.setText(Double.toString(pvalue[10]));
+      Gtestval.setText(Double.toString(gTest));
+  G_dof.setText(Double.toString(df));
+ G_alpha.setText(Double.toString(alpha));
+ G_crit.setText(Double.toString(gCriticalValue));
+ 
+ 
+   if(gTest>gCriticalValue)
+  solution.setText(g_reject);
+ else
+  solution.setText(g_accept);  
+    }
+else
+ {
+  
+   gCriticalValue=-1;
+    solution.setText("");
+     G_alpha.setText("");
+     Gtestval.setText("DNA");
+     G_dof.setText("DNA");
+ G_alpha.setText(Double.toString(alpha));
+ G_crit.setText("DNA");
+ gpval.setText("DNA");
+ JOptionPane.showMessageDialog(null,"Valid alpha values are :0.25,0.05,0.01");
       
-               criteria.setText(c3);
-               solution.setText(sol3);
-           }
-         }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+     
+     
+     
+  
     }
      
      
@@ -11264,17 +11287,17 @@ for(int i=0;i<rows;i++)
 
         if(chi_squared==true   ||  Gtest==true) 
         {
-           TableColumn  c =  new  TableColumn(1);
+         TableColumn  c =  new  TableColumn(1);
         StatsTable.getColumnModel().addColumn(c);
        StatsTable.getColumnModel().getColumn(1).setHeaderValue("Treatment");
          Initialize_Table();
-         Remove(7);
+        Remove(7);
             header0=Treatment.getText();
             header=col1.getText();
             header2=col2.getText();
             StatsTable.getColumnModel().getColumn(1).setHeaderValue(header0);
             StatsTable.getColumnModel().getColumn(2).setHeaderValue(header);
-            StatsTable.getColumnModel().getColumn(3).setHeaderValue(header2);
+            StatsTable.getColumnModel().getColumn(6).setHeaderValue(header2);
         }
 
         if(t_Test==true ||  one_sample==true)
@@ -11422,7 +11445,7 @@ for(int i=0;i<rows;i++)
     private javax.swing.JLabel F_test_label1;
     private javax.swing.JLabel F_test_label3;
     private javax.swing.JTextField GAlt;
-    private javax.swing.JTextField GHypo;
+    private javax.swing.JTextField GHyp0;
     private javax.swing.JTextField G_alpha;
     private javax.swing.JTextField G_crit;
     private javax.swing.JTextField G_dof;

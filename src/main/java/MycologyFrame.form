@@ -5946,37 +5946,37 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="1">
                             <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="false">
-                              <Title value=""/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title value="Treatment"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title value="obs"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title value="obs"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title value=" obs"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title value="obs"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title value=" obs"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
@@ -6677,7 +6677,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel221" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="GHypo" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <Component id="GHyp0" min="-2" pref="120" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
@@ -6685,44 +6685,6 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="gdf" min="-2" pref="73" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jLabel226" min="-2" pref="145" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                                      <Component id="G_dof" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="G_alpha" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="F_test_label1" min="-2" pref="103" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jLabel225" min="-2" pref="160" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="Gtestval" min="-2" pref="82" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                                      <Component id="G_crit" min="-2" pref="99" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                                      <Component id="gpval" min="-2" pref="84" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="Gpval" min="-2" pref="87" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -6736,11 +6698,50 @@
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
-                                              <Component id="solution" min="-2" pref="271" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="solution" min="-2" pref="407" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="gdf" min="-2" pref="73" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="jLabel226" min="-2" pref="145" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" attributes="0">
+                                                              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                                              <Component id="G_dof" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="G_alpha" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="F_test_label1" min="-2" pref="103" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="jLabel225" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="Gtestval" min="-2" pref="82" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                                              <Component id="G_crit" min="-2" pref="99" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                                      <Component id="gpval" min="-2" pref="84" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="Gpval" min="-2" pref="87" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -6752,7 +6753,7 @@
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel223" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GHypo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GHyp0" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -6938,7 +6939,7 @@
                                 <Property name="text" type="java.lang.String" value="&lt;html&gt; Reject  H&lt;sub&gt;0&lt;/sub&gt;  if   G&lt;/html&gt;"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="GHypo">
+                            <Component class="javax.swing.JTextField" name="GHyp0">
                               <Properties>
                                 <Property name="editable" type="boolean" value="false"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -9577,7 +9578,6 @@
                                                   <Component id="jLabel185" min="-2" pref="21" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -9618,12 +9618,14 @@
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                   <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel147" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel150" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="pairedT_H0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel158" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="NullOpt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel147" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="pairedT_H0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel158" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="NullOpt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
