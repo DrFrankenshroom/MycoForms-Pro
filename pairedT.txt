@@ -13,3 +13,10 @@ df   3
  Paired- T value    0.8192880303729141
 Critical value   2.353363434801874
  p-value   0.4987195881723968
+Null Hypothesis   y
+Alternative Hypothesis   uu
+df   13
+ a.l.o.s   0.025
+ Paired- T value    -0.905493907826437
+Critical value   2.160368656462809
+ p-value   0.3830245055033312
