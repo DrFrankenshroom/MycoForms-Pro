@@ -10182,7 +10182,11 @@ Remove(3);
  else
   solution.setText(g_accept);  
     }
-else
+        
+ 
+ 
+ 
+if  (alpha !=0.025||  alpha!=.05  ||alpha !=0.01)
  {
   
    gCriticalValue=-1;
